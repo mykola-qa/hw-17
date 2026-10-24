@@ -254,3 +254,19 @@ distance stats
 [SONAR] calibration +0.0 cm, filter off, alarm on
 distance history
 last 10 entries, mostly 50.2-51.2 cm, then 29.5 cm and 50.5 cm
+health
+[TELEMETRY] auto on, interval 30 s (now 30 s in NORMAL)
+health now
+[TELEMETRY #53] valve closed sonar - state NORMAL
+health off
+[TELEMETRY] auto report off
+health on
+[TELEMETRY] auto report on
+status
+fw v2.1.0 (ota_0), state 1 NORMAL, link lol_slow, user test_user, valve closed
+sysinfo
+ESP32-S3 rev 2, flash 4MB, heap 257 KB, chip temperature 31.7 C
+temp
+chip temperature: 31.7 C
+uptime
+uptime: 0h 34m 01s

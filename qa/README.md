@@ -38,7 +38,7 @@ only one process may own the port.
 
 ## Flash 2.1.0
 
-With the virtual environment active and the serial terminal closed:
+The same procedure is in [`../FLASH.md`](../FLASH.md). With the virtual environment active and the serial terminal closed:
 
 ```bash
 cd ~/hw_17

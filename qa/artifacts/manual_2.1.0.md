@@ -62,6 +62,8 @@ DUT (Device Under Test): ESP32-S3, `/dev/ttyACM0`, account `test_user`.
 | RL-6 relay health | pass | seal 110 / 100000 cycles, wear 0.11% (good); solenoid OK, 45 mOhm |
 | RL-7 logout during schedule | pass | schedule was cycling every 2 s; logout printed `[VALVE] CLOSED (logout)`; the relay did not keep clicking |
 | DS-5 stats and history | pass | 662 measurements, 1 error, min 3.8 cm, max 138.3 cm, avg 43.2 cm; filter off, alarm on; history lists 10 entries |
+| HL-3 health commands | pass | auto on at 30 s; `health now` prints a report; `health off` and `health on` are accepted |
+| System status | pass | `status` shows v2.1.0 on ota_0, NORMAL, `lol_slow`, `test_user`, valve closed; `sysinfo`, `temp`, and `uptime` respond |
 | DS-1 single distance | pass | single readings followed the hand, including 9.1 cm, 29.5 cm, and 138.3 cm |
 | K3 press and second press | pass | 30 s pinging starts and then stops |
 | K4 on 2.1.0 | pass | `E099 K4: perimeter watch is planned in v2.3.0` |

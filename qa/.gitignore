@@ -1,5 +1,4 @@
 .env
-LOCAL_NOTES.md
 .venv/
 __pycache__/
 .pytest_cache/

@@ -80,14 +80,14 @@ Physical color must match the log, not only the text.
 | Collision below 20 cm and again after moving beyond 25 cm; no-echo E701 | DS-6 | partial: threshold and 25 cm re-arm pass | pending |
 | Diode blinks faster as the object approaches while the relay is on | DS-7 | fail BUG-002 | pending |
 | Alias `sonar` performs the same action as `distance` | DS | pass | pending |
-| `health`, `health now`, `health on/off`; interval 10, 300, 9, 301, and report timing. Boundary errors are automated | HL-1, HL-3 | partial: automatic report arrives every 30 s | pending |
+| `health`, `health now`, `health on/off`; interval 10, 300, 9, 301, and report timing. Boundary errors are automated | HL-1, HL-3 | pass | pending |
 | Alias `telemetry` performs the same action as `health` | HL | pass | pending |
 | K1 short and 1.5 s hold | Buttons | pass | pending |
 | K2 short and 1.5 s hold | Buttons | pass | pending |
 | K3 starts and stops 30 s of measurements | Buttons | pass | pending |
 | K4 on 2.1.0 returns E099; on 2.3.0 it acknowledges or raises panic | Buttons | pass: `E099` planned in v2.3.0 | pending |
 | Button pairs select states 1–4 | Buttons, ST-2 | partial: NORMAL, DEBUG, and VERBOSE pass | pending |
-| `help`, `status`, `sysinfo`, `temp`, `uptime`, reboot countdown and reset reason | System | pending | pending |
+| `help`, `status`, `sysinfo`, `temp`, `uptime`, reboot countdown and reset reason | System | pass | pending |
 
 ## 6. OTA
 

@@ -1,28 +1,25 @@
-# fw_7: SENTRY SWM-2 - модуль гідроакустичної вахти підводного човна
+# HW-17: SENTRY SWM-2 acceptance tests
 
-The hand-in is this git repository. Start with `REPORT.md`, then `CHECKLIST.md` and `logs/`. Automated tests are in `qa/`. Share the repository link after the report and logs are filled in and every password is replaced with `***`.
+Acceptance test repository for the SENTRY SWM-2 hydroacoustic watch module on an ESP32-S3. The DUT (Device Under Test) starts on firmware 2.1.0 from `sentry_fw7_v2.1.0_merged.bin`. Firmware 2.3.0 is installed later with `ota update beta`. Requirements are in the PRD (Product Requirements Document). Pass and fail are judged only against that document.
 
-- `sentry_fw7_v2.1.0_merged.bin` - стартова версія 2.1.0 (bootloader + partition table + otadata + app), шиється одним файлом на 0x0
-- `PRD.md` - опис прошивки і вимоги
-- `WIRING.md` - таблиця пінів і збирання стенду (все живлення - тільки 3.3 V)
-- `HW-17.md` - завдання
-- `REPORT.md` - звіт приймальних випробувань
-- `CHECKLIST.md` - поточний чек-лист
-- `logs/` - докази OTA і відтворення багів
-- `qa/` - автоматичні тести
-- `tools/` - локальний OTA-сервер для тестування помилок оновлення
+The hand-in is this git repository. Open the report first. Passwords in the logs are replaced with `***`.
 
-Версія 2.3.0 через esptool не шиється - пристрій качає її по OTA з https://github.com/BohdanHorbanych/esp32-ota-files (`fw7/`).
+## Start here
 
-## Як прошити
+| Path | What it contains |
+|---|---|
+| [REPORT.md](REPORT.md) | Checklist copy, bug reports, bug matrix, security notes, and the release conclusion |
+| [CHECKLIST.md](CHECKLIST.md) | Running pass/fail record for firmware 2.1.0 and 2.3.0 |
+| [logs/](logs/) | UART evidence for OTA transitions and bug reproductions |
+| [qa/README.md](qa/README.md) | Pytest setup and run order on the Raspberry Pi 5 |
+| [PRD.md](PRD.md) | Firmware behavior under test |
+| [HW-17.md](HW-17.md) | Original task text |
+| [FLASH.md](FLASH.md) | How to flash firmware 2.1.0 |
+| [WIRING.md](WIRING.md) | Pin table and bench wiring. Supply is 3.3 V only |
+| [tools/README.md](tools/README.md) | Local OTA server used for download-failure cases |
 
-```bash
-esptool.py --chip esp32s3 --port <ВАШ_ПОРТ> erase-flash
-esptool.py --chip esp32s3 --port <ВАШ_ПОРТ> -b 460800 write-flash 0x0 sentry_fw7_v2.1.0_merged.bin
-```
+## What is in this repository
 
-`erase-flash` обов'язковий - інакше в NVS і otadata залишаться дані попередніх прошивок.
+`qa/` is the UART pytest harness: smoke, shared limits, version-specific checks, and selected OTA cases. Buttons, LED color, the relay diode, sonar distance, and a real Wi-Fi interruption are bench checks. Their results go into `REPORT.md` next to the automated results. `traceability.md` inside `qa/` maps each PRD item to an automated, mixed, or manual check.
 
-Після прошивки: термінал 115200 8N1, RESET, у boot log `SENTRY SWM-2 ... fw v2.1.0` і `ready. state 1 NORMAL (patrol)`. Далі `help`, `connect`, `register <login> <pass>`, `login <login> <pass>`, `ota check`.
-
-Порт: macOS - `/dev/cu.usbserial-*` або `/dev/cu.usbmodem-*`, Windows - `COMx`, Linux - `/dev/ttyUSB*` або `/dev/ttyACM*`.
+Two findings are already written in the report: BUG-001, the lamp timer log says milliseconds, and BUG-002, continuous sonar stays near 50 cm. Both are confirmed on 2.1.0 and are still open on 2.3.0.
