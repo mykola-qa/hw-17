@@ -1,0 +1,256 @@
+# Manual UART session, firmware 2.1.0
+# Wi-Fi password replaced with ***.
+# Collected from the test session. Repeated sonar pings are abbreviated.
+
+connect
+[LINK] scanning...
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -49 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+[LINK] time: synced via NTP, 22:16:37
+[LINK] network saved. Next time just type 'reconnect'
+
+register test_user ***
+[AUTH] profile 'test_user' registered. Now 'login test_user <password>'
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+[TELEMETRY] auto report every 30 s ('health off' to stop)
+whoami
+user: test_user, access: user
+
+lamp on
+[BEACON] on (command) solid, 50%, color (255,255,255)
+lamp off
+[BEACON] off (command)
+lamp on
+[BEACON] on (command) solid, 50%, color (255,255,255)
+lamp color red
+[BEACON] color: red (255,0,0)
+lamp status
+[BEACON] ON, color (255,0,0), brightness 50%, mode solid, timer off
+lamp color green
+[BEACON] color: green (0,255,0)
+lamp color blue
+[BEACON] color: blue (0,0,255)
+lamp color yellow
+[BEACON] color: yellow (255,180,0)
+lamp color purple
+[BEACON] color: purple (160,0,255)
+lamp color cyan
+[BEACON] color: cyan (0,255,255)
+lamp color orange
+[BEACON] color: orange (255,80,0)
+lamp mode blink
+[BEACON] mode: blink
+lamp mode breathe
+[BEACON] mode: breathe
+lamp mode rainbow
+[BEACON] mode: rainbow
+lamp brightness 10
+[BEACON] brightness: 10%
+lamp brightness 100
+[BEACON] brightness: 100%
+lamp brightness 0
+[BEACON] brightness: 0%
+lamp status
+[BEACON] ON, color (255,80,0), brightness 0%, mode rainbow, timer off
+lamp brightness 50
+[BEACON] brightness: 50%
+lamp timer 10
+[BEACON] auto-off in 10 ms
+[BEACON] ON, color (255,80,0), brightness 50%, mode rainbow, timer 0 s left
+[BEACON] off (timer expired)
+lamp timer 10
+[BEACON] auto-off in 10 ms
+[BEACON] off (timer expired)
+
+lamp scene save 1
+[BEACON] scene 1 saved
+lamp scene load 1
+[BEACON] scene 1 loaded: (255,0,0) 80% solid
+lamp status
+[BEACON] ON, color (255,0,0), brightness 80%, mode solid, timer off
+lamp scene save 2
+[BEACON] scene 2 saved
+lamp scene load 2
+[BEACON] scene 2 loaded: (255,0,0) 80% solid
+lamp scene load 3
+E509 scene 3 is empty. Use 'lamp scene save 3'
+lamp scene save 4
+E508 scene must be 1-3
+
+relay on
+[VALVE] OPEN (command)
+relay off
+[VALVE] CLOSED (command)
+relay toggle
+[VALVE] OPEN (command)
+relay on
+W601 relay already on
+relay off
+[VALVE] CLOSED (command)
+relay pulse 1000
+[VALVE] OPEN (pulse)
+[VALVE] CLOSED (pulse end)
+relay status
+[VALVE] closed, auto off, cycles 12
+relay pulse 100
+[VALVE] OPEN (pulse)
+[VALVE] CLOSED (pulse end)
+relay pulse 10000
+[VALVE] OPEN (pulse)
+[VALVE] CLOSED (pulse end)
+relay toggle x4 fast
+[VALVE] OPEN (command)
+[VALVE] CLOSED (command)
+E602 relay switching too fast (max 2 per second)
+
+distance
+[SONAR] ping: echo 22.0 cm
+distance
+[SONAR] ping: echo 17.7 cm
+[COLLISION] contact too close: 17.7 cm (< 20 cm)
+distance sequence after reboot
+[SONAR] ping: echo 79.4 cm
+[SONAR] ping: echo 9.1 cm
+[COLLISION] contact too close: 9.1 cm (< 20 cm)
+[SONAR] ping: echo 12.9 cm
+[SONAR] ping: echo 29.5 cm
+[SONAR] ping: echo 17.3 cm
+[COLLISION] contact too close: 17.3 cm (< 20 cm)
+
+[BTN] K1 pressed
+[BEACON] on (K1) solid, 80%, color (255,0,0)
+[BTN] K2 pressed
+[VALVE] OPEN (K2)
+[BTN] K3 pressed
+[SONAR] active pinging for 30 s, every 500 ms (K3)
+[BTN] K4 pressed
+E099 K4: perimeter watch is planned in v2.3.0
+[BTN] K3 pressed
+[SONAR] pinging stopped (K3)
+[BTN] K1 long press
+[BEACON] color cycle by K1: red, green, blue, yellow, purple, cyan
+[BTN] K2 pressed
+[VALVE] CLOSED (K2)
+[BTN] K2 long press
+[VALVE] OPEN (K2 pulse)
+[VALVE] CLOSED (pulse end)
+[BTN] K1+K2 held 2 s -> state 1
+W303 already in 1 NORMAL
+[BTN] K2+K3 held 2 s -> state 2
+[STATE] 1 NORMAL -> 2 DEBUG (by buttons)
+[BTN] K3+K4 held 2 s -> state 3
+[STATE] 2 DEBUG -> 3 VERBOSE (by buttons)
+[V] button K1 down
+[V] button K4 down
+[BTN] K4+K1 held 2 s -> state 4
+[STATE] 3 VERBOSE -> 4 EMERGENCY (by buttons)
+[EMERGENCY] EMERGENCY SURFACING. Module locked. Allowed: help, status, whoami, version, health now, reboot. Exit: reboot only
+lamp on
+E005 'lamp on' blocked in EMERGENCY
+[EMERGENCY] transducer driver temp rising: 31.7 C -> 40.6 C (invalid: 1)
+status
+fw: v2.1.0 (ota_0)
+state: 4 EMERGENCY
+user: test_user (user)
+reboot
+rebooting in 3...
+last reset: software reboot
+ready. state 1 NORMAL (patrol). Type 'help'
+[LINK] known network 'lol_slow'. Type 'reconnect' to connect
+[AUTH] profile 'test_user' registered
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -33 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+state 4
+E302 EMERGENCY can be entered only from 3 VERBOSE (now 1 NORMAL)
+lamp on
+[BEACON] on (command) solid, 80%, color (0,255,255)
+relay on
+[VALVE] OPEN (command)
+logout
+[AUTH] operator test_user relieved from watch
+[BEACON] off (logout)
+[VALVE] CLOSED (logout)
+lamp status
+E003 login required
+relay status
+E003 login required
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+beacon on
+[BEACON] on (command) solid, 80%, color (0,255,255)
+valve open
+[VALVE] OPEN (command)
+valve close
+[VALVE] CLOSED (command)
+sonar
+[SONAR] ping: echo 138.3 cm
+telemetry now
+[TELEMETRY #2] valve closed sonar 138.3cm state NORMAL
+distance alarm 50
+[SONAR] alarm at 50 cm
+distance
+[SONAR] ping: echo 138.3 cm
+distance
+[SONAR] ping: echo 37.6 cm
+[SONAR] PROXIMITY ALARM: contact at 37.6 cm (threshold 50 cm)
+distance
+[SONAR] ping: echo 136.6 cm
+[SONAR] proximity alarm cleared (136.6 cm)
+distance alarm off
+[SONAR] alarm off
+relay on
+[VALVE] OPEN (command)
+distance log 500
+[SONAR] continuous pinging every 500 ms (command)
+[SONAR] valve OPEN - proximity indicator: diode blinks faster when contact is closer
+E701 sonar: no echo (check transducer wiring TRIG 5 / ECHO 18)
+distance stop
+[SONAR] pinging stopped (command)
+relay off
+[VALVE] CLOSED (command)
+distance filter off
+[SONAR] filter off
+distance log 500
+continuous readings remain mostly 50.2-51.0 cm; diode rhythm unchanged
+distance stop
+[SONAR] pinging stopped (command)
+relay off
+[VALVE] CLOSED (command)
+relay schedule 2 2
+[VALVE] schedule: 2 s on / 2 s off
+OPEN and CLOSED alternate about every 2000 ms
+relay schedule off
+[VALVE] schedule stopped
+relay off
+[VALVE] CLOSED (command)
+relay auto on
+[VALVE] auto on - valve opens on sonar proximity alarm
+distance alarm 50
+[SONAR] alarm at 50 cm
+distance
+[SONAR] ping: echo 29.5 cm
+[SONAR] PROXIMITY ALARM: contact at 29.5 cm (threshold 50 cm)
+[VALVE] OPEN (distance alarm)
+distance
+[SONAR] ping: echo 50.5 cm
+relay health
+[VALVE] seal: 110 / 100000 cycles, wear 0.11% (good)
+[VALVE] solenoid: OK, contact resistance: 45 mOhm
+relay schedule 2 2
+OPEN and CLOSED alternate about every 2000 ms
+logout
+[AUTH] operator test_user relieved from watch
+[BEACON] off (logout)
+[VALVE] CLOSED (logout)
+relay did not keep clicking
+distance stats
+[SONAR] measurements 662, errors 1, min 3.8, max 138.3, avg 43.2 cm
+[SONAR] calibration +0.0 cm, filter off, alarm on
+distance history
+last 10 entries, mostly 50.2-51.2 cm, then 29.5 cm and 50.5 cm

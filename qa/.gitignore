@@ -1,0 +1,9 @@
+.env
+LOCAL_NOTES.md
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+artifacts/results.json
+artifacts/logs/*.log
+REPORT.draft.md
