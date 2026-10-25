@@ -1,0 +1,83 @@
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] fleet network reachable (internet OK)
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+ota server default
+[OTA] server: https://raw.githubusercontent.com/BohdanHorbanych/esp32-ota-files/main/fw7/ (default)
+ota check
+[OTA] current: v2.3.0
+[OTA] stable:  v2.1.0
+[OTA] beta:    v2.3.0
+[OTA] running newer than stable
+guard arm
+[WATCH] ARMED. Perimeter zone < 50 cm, sonar sweeping
+guard disarm 0000
+E803 wrong PIN. Attempts: 1/3
+guard disarm 0000
+E803 wrong PIN. Attempts: 2/3
+guard disarm 0000
+E803 wrong PIN. Attempts: 3/3
+[WATCH] !!! GENERAL ALARM: 3 wrong PIN attempts !!!
+[VALVE] OPEN (critical alert)
+[STATE] 1 NORMAL -> 3 VERBOSE (by critical alert)
+guard disarm 1234
+[WATCH] disarmed (was ALARM)
+[VALVE] CLOSED (guard disarm)
+relay clicked
+K4 short press
+[BTN] K4 pressed
+[CIC] #3 acknowledged (K4). Unacked: 2
+K4 held about 1.5 s
+[BTN] K4 long press
+[WATCH] PANIC button (K4)
+[WATCH] !!! GENERAL ALARM: PANIC button !!!
+[VALVE] OPEN (critical alert)
+guard disarm 1234
+[WATCH] disarmed (was ALARM)
+[VALVE] CLOSED (guard disarm)
+guard pin 1234 5678
+[WATCH] PIN changed
+guard pin 5678 1234
+[WATCH] PIN changed
+guard log
+10 entries: armed, wrong pin 1/3 through 3/3, ALARM wrong PIN, disarmed by test_user, ALARM PANIC button, disarmed by test_user, pin changed, pin changed
+guard arm
+[WATCH] ARMED. Perimeter zone < 50 cm, sonar sweeping
+logout
+[STATE] 3 VERBOSE -> 1 NORMAL (by logout)
+[WATCH] stays ARMED after logout
+login test_user ***
+guard status
+[WATCH] ARMED, zone 50 cm, last distance 130.0 cm
+guard disarm 1234
+[WATCH] disarmed (was ARMED)
+disconnect
+[LINK] disconnected
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -32 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+distance calibrate 20
+[SONAR] calibrated: measured 19.8 cm, offset +0.2 cm
+distance
+[SONAR] ping: echo 130.3 cm
+distance
+[SONAR] ping: echo 14.7 cm
+[COLLISION] contact too close: 14.7 cm (< 20 cm)
+distance calibrate reset
+E706 usage: distance calibrate <ref 5-300 cm>
+distance
+[SONAR] ping: echo 21.2 cm
+distance stats
+[SONAR] measurements 288, errors 0, min 14.7, max 137.2, avg 124.0 cm
+[SONAR] calibration +0.2 cm, filter off, alarm off
+distance
+[SONAR] ping: echo 130.2 cm
+distance
+[SONAR] ping: echo 18.4 cm
+[COLLISION] contact too close: 18.4 cm (< 20 cm)
+distance
+[SONAR] ping: echo 130.3 cm
+distance after a restart, timestamp 32200 ms
+E701 sonar: no echo (check transducer wiring TRIG 5 / ECHO 18)

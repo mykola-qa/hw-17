@@ -1,0 +1,5 @@
+ota url http://192.168.50.211:8000/test/truncated.bin
+[OTA] image: sentry_fw7 v2.3.0
+[OTA] 10% through 100%
+E412 image validation failed (corrupted image)
+telemetry continued, no reboot

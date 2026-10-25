@@ -1,0 +1,2569 @@
+# pytest -m "not ota" on fw 2.3.0, 2026-10-25 00:46:05 to 00:59:18
+# 3 failed, 58 passed, 4 skipped, 10 deselected
+#
+# x FAIL  tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99]
+#         BUG-005. Expected E603. The DUT accepted the pulse and opened the valve.
+# x FAIL  tests/test_common.py::test_distance_count_boundaries[20-None]
+#         BUG-004. Expected a reading. The DUT returned E704. distance 1 passed; 0 and 21 returned E704.
+# x FAIL  tests/test_smoke.py::test_status_reports_core_state
+#         Test fault. The assertion required the word Wi-Fi. Status printed "link:".
+#
+2026-10-25 00:46:05 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[1] ===
+2026-10-25 00:46:06 INFO     [drivers.sentry_uart] TX version
+2026-10-25 00:46:07 DEBUG    [drivers.sentry_uart] RX block
+version
+I (380290) sentry: SENTRY SWM-2 sonar watch module, fw v2.3.0 (build Oct  6 2026 02:15:26)
+I (380290) sentry:   partition: ota_1 @ 0x1a0000, state: valid
+2026-10-25 00:46:08 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:46:09 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (381800) sentry: user: test_user, access: user
+2026-10-25 00:46:09 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:10 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (383310) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:11 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:12 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (384820) sentry: W303 already in 1 NORMAL
+I (384840) sentry: [TELEMETRY #12] 00:46:11 up 00:06:24 heap 251KB rssi -48 temp 32.7C depth 41.3m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:46:12 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:46:13 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (386330) sentry: W710 measuring is not running
+2026-10-25 00:46:14 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:46:15 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (387840) sentry: W605 schedule is not running
+2026-10-25 00:46:15 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:46:16 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (389350) sentry: W601 relay already off
+2026-10-25 00:46:17 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:46:18 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (390860) sentry: W510 lamp already off
+2026-10-25 00:46:18 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:19 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (392370) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:19 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[1] ===
+2026-10-25 00:46:19 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[2] ===
+2026-10-25 00:46:20 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:46:21 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (393880) sentry: user: test_user, access: user
+2026-10-25 00:46:21 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:22 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (395390) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:23 INFO     [drivers.sentry_uart] TX state 2
+2026-10-25 00:46:25 DEBUG    [drivers.sentry_uart] RX block
+state 2
+W (396900) sentry: [STATE] 1 NORMAL -> 2 DEBUG (by command)
+I (396900) sentry: [STATE] DEBUG (maintenance): raw transducer data, LED blink codes, parser diagnostics
+I (396900) sentry: [V] 'state' done in 3 ms
+I (397650) sentry: [PWR] battery bus 24.19 V, load 1.4 A
+2026-10-25 00:46:25 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:46:26 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+I (399060) sentry: [DBG] cmd 'distance' args 'stop' need 2
+W (399060) sentry: W710 measuring is not running
+I (399060) sentry: [V] 'distance' done in 0 ms
+2026-10-25 00:46:26 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:46:28 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+I (400570) sentry: [DBG] cmd 'relay' args 'schedule off' need 2
+W (400570) sentry: W605 schedule is not running
+I (400570) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:46:28 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:46:29 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (402080) sentry: [DBG] cmd 'relay' args 'off' need 2
+W (402080) sentry: W601 relay already off
+I (402080) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:46:29 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:46:31 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+I (403590) sentry: [DBG] cmd 'lamp' args 'off' need 2
+W (403590) sentry: W510 lamp already off
+I (403590) sentry: [V] 'lamp' done in 0 ms
+2026-10-25 00:46:31 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:33 DEBUG    [drivers.sentry_uart] RX block
+state 1
+I (405100) sentry: [DBG] cmd 'state' args '1' need 2
+W (405100) sentry: [STATE] 2 DEBUG -> 1 NORMAL (by command)
+I (405650) sentry: [NAV] depth 41.1 m, heading 274, speed 2.7 kn
+2026-10-25 00:46:33 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[2] ===
+2026-10-25 00:46:33 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[3] ===
+2026-10-25 00:46:33 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:46:34 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (407070) sentry: user: test_user, access: user
+2026-10-25 00:46:34 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:36 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (408580) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:36 INFO     [drivers.sentry_uart] TX state 3
+2026-10-25 00:46:38 DEBUG    [drivers.sentry_uart] RX block
+state 3
+W (410090) sentry: [STATE] 1 NORMAL -> 3 VERBOSE (by command)
+I (410090) sentry: [STATE] VERBOSE (tactical): extended logs, telemetry every 10 s, LED heartbeat
+I (410090) sentry: [V] 'state' done in 3 ms
+I (410650) sentry: [ACU] ambient noise 69 dB re 1uPa, sea state 2, water 8.2 C
+2026-10-25 00:46:38 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:46:39 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (412070) sentry: W710 measuring is not running
+I (412070) sentry: [V] 'distance' done in 0 ms
+2026-10-25 00:46:39 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:46:41 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (413580) sentry: W605 schedule is not running
+I (413580) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:46:41 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:46:42 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (415040) sentry: [TELEMETRY #13] 00:46:41 up 00:06:54 heap 251KB rssi -41 temp 32.7C depth 41.4m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state VERBOSE
+I (415040) sentry: [V] telemetry: min heap 204KB, beacon off, tasks 16, water 8.2C, source auto
+W (415090) sentry: W601 relay already off
+I (415090) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:46:42 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:46:43 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (416510) sentry: W510 lamp already off
+I (416510) sentry: [V] 'lamp' done in 0 ms
+2026-10-25 00:46:44 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:46 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (418020) sentry: [STATE] 3 VERBOSE -> 1 NORMAL (by command)
+I (418650) sentry: [PWR] battery bus 24.18 V, load 1.6 A
+2026-10-25 00:46:46 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[3] ===
+2026-10-25 00:46:46 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[NORMAL] ===
+2026-10-25 00:46:46 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:46:47 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (420130) sentry: user: test_user, access: user
+2026-10-25 00:46:47 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:49 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (421640) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:49 INFO     [drivers.sentry_uart] TX state NORMAL
+2026-10-25 00:46:50 DEBUG    [drivers.sentry_uart] RX block
+state NORMAL
+W (423150) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:50 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:46:52 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (424660) sentry: W710 measuring is not running
+I (425050) sentry: [TELEMETRY #14] 00:46:51 up 00:07:04 heap 251KB rssi -44 temp 32.7C depth 41.6m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:46:52 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:46:54 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (426570) sentry: W605 schedule is not running
+2026-10-25 00:46:54 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:46:55 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (428080) sentry: W601 relay already off
+2026-10-25 00:46:55 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:46:57 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (429590) sentry: W510 lamp already off
+2026-10-25 00:46:57 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:46:58 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (431100) sentry: W303 already in 1 NORMAL
+2026-10-25 00:46:58 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[NORMAL] ===
+2026-10-25 00:46:58 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[DEBUG] ===
+2026-10-25 00:46:58 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:47:00 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (432610) sentry: user: test_user, access: user
+2026-10-25 00:47:00 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:01 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (434120) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:01 INFO     [drivers.sentry_uart] TX state DEBUG
+2026-10-25 00:47:03 DEBUG    [drivers.sentry_uart] RX block
+state DEBUG
+W (435630) sentry: [STATE] 1 NORMAL -> 2 DEBUG (by command)
+I (435630) sentry: [STATE] DEBUG (maintenance): raw transducer data, LED blink codes, parser diagnostics
+I (435630) sentry: [V] 'state' done in 3 ms
+I (435650) sentry: [NAV] depth 41.9 m, heading 270, speed 3.2 kn
+2026-10-25 00:47:03 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:47:04 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+I (437140) sentry: [DBG] cmd 'distance' args 'stop' need 2
+W (437140) sentry: W710 measuring is not running
+I (437140) sentry: [V] 'distance' done in 0 ms
+2026-10-25 00:47:04 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:47:06 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+I (438650) sentry: [DBG] cmd 'relay' args 'schedule off' need 2
+W (438650) sentry: W605 schedule is not running
+I (438650) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:47:06 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:47:07 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (440160) sentry: [DBG] cmd 'relay' args 'off' need 2
+W (440160) sentry: W601 relay already off
+I (440160) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:47:08 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:47:09 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+I (441670) sentry: [DBG] cmd 'lamp' args 'off' need 2
+W (441670) sentry: W510 lamp already off
+I (441670) sentry: [V] 'lamp' done in 0 ms
+2026-10-25 00:47:09 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:11 DEBUG    [drivers.sentry_uart] RX block
+state 1
+I (443180) sentry: [DBG] cmd 'state' args '1' need 2
+W (443180) sentry: [STATE] 2 DEBUG -> 1 NORMAL (by command)
+I (443650) sentry: [ACU] ambient noise 69 dB re 1uPa, sea state 2, water 8.2 C
+2026-10-25 00:47:11 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[DEBUG] ===
+2026-10-25 00:47:11 INFO     [conftest] === START tests/test_common.py::test_state_accepts_documented_values[VERBOSE] ===
+2026-10-25 00:47:11 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:47:12 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (445090) sentry: user: test_user, access: user
+2026-10-25 00:47:12 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:14 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (446600) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:14 INFO     [drivers.sentry_uart] TX state VERBOSE
+2026-10-25 00:47:16 DEBUG    [drivers.sentry_uart] RX block
+state VERBOSE
+W (448110) sentry: [STATE] 1 NORMAL -> 3 VERBOSE (by command)
+I (448110) sentry: [STATE] VERBOSE (tactical): extended logs, telemetry every 10 s, LED heartbeat
+I (448110) sentry: [V] 'state' done in 3 ms
+I (448650) sentry: [PWR] battery bus 24.18 V, load 1.7 A
+2026-10-25 00:47:16 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:47:17 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (450060) sentry: W710 measuring is not running
+I (450060) sentry: [V] 'distance' done in 0 ms
+2026-10-25 00:47:17 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:47:19 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (451570) sentry: W605 schedule is not running
+I (451570) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:47:19 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:47:20 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (453080) sentry: W601 relay already off
+I (453080) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:47:20 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:47:22 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (454590) sentry: W510 lamp already off
+I (454590) sentry: [V] 'lamp' done in 0 ms
+I (455050) sentry: [TELEMETRY #15] 00:47:21 up 00:07:34 heap 251KB rssi -43 temp 32.7C depth 41.7m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state VERBOSE
+I (455050) sentry: [V] telemetry: min heap 204KB, beacon off, tasks 16, water 8.1C, source auto
+2026-10-25 00:47:22 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:24 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (456500) sentry: [STATE] 3 VERBOSE -> 1 NORMAL (by command)
+I (456650) sentry: [NAV] depth 41.9 m, heading 270, speed 2.7 kn
+2026-10-25 00:47:24 INFO     [conftest] === END tests/test_common.py::test_state_accepts_documented_values[VERBOSE] ===
+2026-10-25 00:47:24 INFO     [conftest] === START tests/test_common.py::test_state_rejects_invalid_value ===
+2026-10-25 00:47:24 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:47:25 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (458060) sentry: user: test_user, access: user
+2026-10-25 00:47:25 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:27 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (459570) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:27 INFO     [drivers.sentry_uart] TX state 0
+2026-10-25 00:47:28 DEBUG    [drivers.sentry_uart] RX block
+state 0
+E (461080) sentry: E301 unknown state '0'. Use 1-4 or normal/debug/verbose/emergency
+2026-10-25 00:47:28 INFO     [drivers.sentry_uart] TX state 5
+2026-10-25 00:47:30 DEBUG    [drivers.sentry_uart] RX block
+state 5
+E (462590) sentry: E301 unknown state '5'. Use 1-4 or normal/debug/verbose/emergency
+2026-10-25 00:47:30 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:47:32 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (464100) sentry: W710 measuring is not running
+I (465060) sentry: [TELEMETRY #16] 00:47:31 up 00:07:44 heap 251KB rssi -43 temp 32.7C depth 41.9m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:47:32 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:47:33 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (466490) sentry: W605 schedule is not running
+2026-10-25 00:47:34 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:47:35 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (468000) sentry: W601 relay already off
+2026-10-25 00:47:35 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:47:36 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (469510) sentry: W510 lamp already off
+2026-10-25 00:47:37 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:38 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (471020) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:38 INFO     [conftest] === END tests/test_common.py::test_state_rejects_invalid_value ===
+2026-10-25 00:47:38 INFO     [conftest] === START tests/test_common.py::test_lamp_brightness_boundaries[-1-E504] ===
+2026-10-25 00:47:38 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:47:39 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (472530) sentry: user: test_user, access: user
+2026-10-25 00:47:40 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:41 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (474040) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:41 INFO     [drivers.sentry_uart] TX lamp brightness -1
+2026-10-25 00:47:42 DEBUG    [drivers.sentry_uart] RX block
+lamp brightness -1
+E (475550) sentry: E504 brightness must be 0-100
+2026-10-25 00:47:43 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:47:44 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (477060) sentry: W710 measuring is not running
+2026-10-25 00:47:44 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:47:46 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (478570) sentry: W605 schedule is not running
+2026-10-25 00:47:46 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:47:47 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (480080) sentry: W601 relay already off
+2026-10-25 00:47:47 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:47:49 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (481590) sentry: W510 lamp already off
+2026-10-25 00:47:49 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:50 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (483100) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:50 INFO     [conftest] === END tests/test_common.py::test_lamp_brightness_boundaries[-1-E504] ===
+2026-10-25 00:47:50 INFO     [conftest] === START tests/test_common.py::test_lamp_brightness_boundaries[0-None] ===
+2026-10-25 00:47:50 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:47:52 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (484610) sentry: user: test_user, access: user
+2026-10-25 00:47:52 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:47:53 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (486120) sentry: W303 already in 1 NORMAL
+2026-10-25 00:47:53 INFO     [drivers.sentry_uart] TX lamp brightness 0
+2026-10-25 00:47:55 DEBUG    [drivers.sentry_uart] RX block
+lamp brightness 0
+I (487640) sentry: [BEACON] brightness: 0%
+2026-10-25 00:47:55 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:47:56 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (489140) sentry: W710 measuring is not running
+2026-10-25 00:47:56 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:47:58 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (490650) sentry: W605 schedule is not running
+2026-10-25 00:47:58 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:47:59 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (492160) sentry: W601 relay already off
+2026-10-25 00:48:00 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:48:01 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (493670) sentry: W510 lamp already off
+2026-10-25 00:48:01 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:02 DEBUG    [drivers.sentry_uart] RX block
+I (495060) sentry: [TELEMETRY #17] 00:48:01 up 00:08:14 heap 251KB rssi -43 temp 32.7C depth 41.9m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+state 1
+W (495180) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:02 INFO     [conftest] === END tests/test_common.py::test_lamp_brightness_boundaries[0-None] ===
+2026-10-25 00:48:02 INFO     [conftest] === START tests/test_common.py::test_lamp_brightness_boundaries[100-None] ===
+2026-10-25 00:48:03 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:48:04 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (496690) sentry: user: test_user, access: user
+2026-10-25 00:48:04 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:05 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (498200) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:06 INFO     [drivers.sentry_uart] TX lamp brightness 100
+2026-10-25 00:48:07 DEBUG    [drivers.sentry_uart] RX block
+lamp brightness 100
+I (499720) sentry: [BEACON] brightness: 100%
+2026-10-25 00:48:07 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:48:08 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (501220) sentry: W710 measuring is not running
+2026-10-25 00:48:09 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:48:10 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (502730) sentry: W605 schedule is not running
+2026-10-25 00:48:10 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:48:11 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (504240) sentry: W601 relay already off
+2026-10-25 00:48:12 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:48:13 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (505750) sentry: W510 lamp already off
+2026-10-25 00:48:13 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:14 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (507260) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:14 INFO     [conftest] === END tests/test_common.py::test_lamp_brightness_boundaries[100-None] ===
+2026-10-25 00:48:14 INFO     [conftest] === START tests/test_common.py::test_lamp_brightness_boundaries[101-E504] ===
+2026-10-25 00:48:15 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:48:16 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (508770) sentry: user: test_user, access: user
+2026-10-25 00:48:16 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:17 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (510280) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:18 INFO     [drivers.sentry_uart] TX lamp brightness 101
+2026-10-25 00:48:19 DEBUG    [drivers.sentry_uart] RX block
+lamp brightness 101
+E (511790) sentry: E504 brightness must be 0-100
+2026-10-25 00:48:19 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:48:20 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (513300) sentry: W710 measuring is not running
+2026-10-25 00:48:21 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:48:22 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (514810) sentry: W605 schedule is not running
+2026-10-25 00:48:22 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:48:23 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (516320) sentry: W601 relay already off
+2026-10-25 00:48:24 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:48:25 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (517830) sentry: W510 lamp already off
+2026-10-25 00:48:25 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:26 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (519340) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:26 INFO     [conftest] === END tests/test_common.py::test_lamp_brightness_boundaries[101-E504] ===
+2026-10-25 00:48:26 INFO     [conftest] === START tests/test_common.py::test_lamp_rgb_boundaries[-1 0 0-E502] ===
+2026-10-25 00:48:27 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:48:28 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (520850) sentry: user: test_user, access: user
+2026-10-25 00:48:28 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:29 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (522360) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:30 INFO     [drivers.sentry_uart] TX lamp color -1 0 0
+2026-10-25 00:48:31 DEBUG    [drivers.sentry_uart] RX block
+lamp color -1 0 0
+E (523870) sentry: E502 rgb values must be 0-255
+2026-10-25 00:48:31 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:48:32 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (525380) sentry: W710 measuring is not running
+2026-10-25 00:48:33 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:48:35 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (526890) sentry: W605 schedule is not running
+I (527650) sentry: [ACU] ambient noise 66 dB re 1uPa, sea state 2, water 8.1 C
+2026-10-25 00:48:35 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:48:36 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (529060) sentry: W601 relay already off
+2026-10-25 00:48:36 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:48:38 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (530570) sentry: W510 lamp already off
+2026-10-25 00:48:38 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:39 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (532080) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:39 INFO     [conftest] === END tests/test_common.py::test_lamp_rgb_boundaries[-1 0 0-E502] ===
+2026-10-25 00:48:39 INFO     [conftest] === START tests/test_common.py::test_lamp_rgb_boundaries[0 0 0-None] ===
+2026-10-25 00:48:39 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:48:41 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (533590) sentry: user: test_user, access: user
+2026-10-25 00:48:41 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:42 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (535100) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:42 INFO     [drivers.sentry_uart] TX lamp color 0 0 0
+2026-10-25 00:48:44 DEBUG    [drivers.sentry_uart] RX block
+lamp color 0 0 0
+I (536620) sentry: [BEACON] color: (0,0,0)
+2026-10-25 00:48:44 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:48:45 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (538120) sentry: W710 measuring is not running
+2026-10-25 00:48:45 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:48:47 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (539630) sentry: W605 schedule is not running
+2026-10-25 00:48:47 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:48:48 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (541140) sentry: W601 relay already off
+2026-10-25 00:48:48 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:48:50 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (542650) sentry: W510 lamp already off
+2026-10-25 00:48:50 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:51 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (544160) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:51 INFO     [conftest] === END tests/test_common.py::test_lamp_rgb_boundaries[0 0 0-None] ===
+2026-10-25 00:48:51 INFO     [conftest] === START tests/test_common.py::test_lamp_rgb_boundaries[255 255 255-None] ===
+2026-10-25 00:48:52 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:48:53 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (545670) sentry: user: test_user, access: user
+2026-10-25 00:48:53 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:48:54 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (547180) sentry: W303 already in 1 NORMAL
+2026-10-25 00:48:55 INFO     [drivers.sentry_uart] TX lamp color 255 255 255
+2026-10-25 00:48:56 DEBUG    [drivers.sentry_uart] RX block
+lamp color 255 255 255
+I (548700) sentry: [BEACON] color: (255,255,255)
+2026-10-25 00:48:56 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:48:57 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (550200) sentry: W710 measuring is not running
+2026-10-25 00:48:58 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:48:59 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (551710) sentry: W605 schedule is not running
+2026-10-25 00:48:59 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:49:00 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (553220) sentry: W601 relay already off
+2026-10-25 00:49:01 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:49:02 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (554730) sentry: W510 lamp already off
+I (555060) sentry: [TELEMETRY #19] 00:49:01 up 00:09:14 heap 251KB rssi -44 temp 32.7C depth 41.7m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:49:02 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:03 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (556490) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:03 INFO     [conftest] === END tests/test_common.py::test_lamp_rgb_boundaries[255 255 255-None] ===
+2026-10-25 00:49:03 INFO     [conftest] === START tests/test_common.py::test_lamp_rgb_boundaries[256 0 0-E502] ===
+2026-10-25 00:49:04 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:49:05 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (558000) sentry: user: test_user, access: user
+2026-10-25 00:49:05 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:06 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (559510) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:07 INFO     [drivers.sentry_uart] TX lamp color 256 0 0
+2026-10-25 00:49:08 DEBUG    [drivers.sentry_uart] RX block
+lamp color 256 0 0
+E (561020) sentry: E502 rgb values must be 0-255
+2026-10-25 00:49:08 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:49:09 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (562530) sentry: W710 measuring is not running
+2026-10-25 00:49:10 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:49:11 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (564040) sentry: W605 schedule is not running
+2026-10-25 00:49:11 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:49:12 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (565550) sentry: W601 relay already off
+2026-10-25 00:49:13 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:49:14 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (567060) sentry: W510 lamp already off
+2026-10-25 00:49:14 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:16 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (568570) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:16 INFO     [conftest] === END tests/test_common.py::test_lamp_rgb_boundaries[256 0 0-E502] ===
+2026-10-25 00:49:16 INFO     [conftest] === START tests/test_common.py::test_lamp_modes_and_invalid_mode ===
+2026-10-25 00:49:16 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:49:17 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (570080) sentry: user: test_user, access: user
+2026-10-25 00:49:17 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:19 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (571590) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:19 INFO     [drivers.sentry_uart] TX lamp mode solid
+2026-10-25 00:49:20 DEBUG    [drivers.sentry_uart] RX block
+lamp mode solid
+I (573110) sentry: [BEACON] mode: solid
+2026-10-25 00:49:20 INFO     [drivers.sentry_uart] TX lamp mode blink
+2026-10-25 00:49:22 DEBUG    [drivers.sentry_uart] RX block
+lamp mode blink
+I (574620) sentry: [BEACON] mode: blink
+2026-10-25 00:49:22 INFO     [drivers.sentry_uart] TX lamp mode breathe
+2026-10-25 00:49:23 DEBUG    [drivers.sentry_uart] RX block
+lamp mode breathe
+I (576130) sentry: [BEACON] mode: breathe
+2026-10-25 00:49:23 INFO     [drivers.sentry_uart] TX lamp mode rainbow
+2026-10-25 00:49:25 DEBUG    [drivers.sentry_uart] RX block
+lamp mode rainbow
+I (577640) sentry: [BEACON] mode: rainbow
+2026-10-25 00:49:25 INFO     [drivers.sentry_uart] TX lamp mode invalid
+2026-10-25 00:49:26 DEBUG    [drivers.sentry_uart] RX block
+lamp mode invalid
+E (579140) sentry: E505 unknown mode 'invalid'. Modes: solid blink breathe rainbow
+2026-10-25 00:49:26 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:49:28 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (580650) sentry: W710 measuring is not running
+2026-10-25 00:49:28 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:49:29 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (582160) sentry: W605 schedule is not running
+2026-10-25 00:49:30 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:49:31 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (583670) sentry: W601 relay already off
+2026-10-25 00:49:31 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:49:32 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (585180) sentry: W510 lamp already off
+I (585260) sentry: [TELEMETRY #20] 00:49:31 up 00:09:44 heap 251KB rssi -44 temp 32.7C depth 41.7m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:49:33 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:34 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (586690) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:34 INFO     [conftest] === END tests/test_common.py::test_lamp_modes_and_invalid_mode ===
+2026-10-25 00:49:34 INFO     [conftest] === START tests/test_common.py::test_lamp_timer_boundaries[-1-E506] ===
+2026-10-25 00:49:34 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:49:36 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (588200) sentry: user: test_user, access: user
+W (588650) sentry: [PWR] battery bus ripple 140 mV (limit 250 mV)
+2026-10-25 00:49:36 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:37 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (590110) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:37 INFO     [drivers.sentry_uart] TX lamp on
+2026-10-25 00:49:39 DEBUG    [drivers.sentry_uart] RX block
+lamp on
+I (591620) sentry: [BEACON] on (command) rainbow, 100%, color (255,255,255)
+2026-10-25 00:49:39 INFO     [drivers.sentry_uart] TX lamp timer -1
+2026-10-25 00:49:40 DEBUG    [drivers.sentry_uart] RX block
+lamp timer -1
+E (593130) sentry: E506 timer must be 1-3600 s (0 - cancel)
+2026-10-25 00:49:40 INFO     [drivers.sentry_uart] TX lamp timer 0
+2026-10-25 00:49:42 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 0
+I (594640) sentry: [BEACON] timer cancelled
+2026-10-25 00:49:42 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:49:43 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (596150) sentry: W710 measuring is not running
+2026-10-25 00:49:43 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:49:45 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (597660) sentry: W605 schedule is not running
+2026-10-25 00:49:45 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:49:46 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (599170) sentry: W601 relay already off
+2026-10-25 00:49:47 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:49:48 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+I (600680) sentry: [BEACON] off (command)
+2026-10-25 00:49:48 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:49 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (602190) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:49 INFO     [conftest] === END tests/test_common.py::test_lamp_timer_boundaries[-1-E506] ===
+2026-10-25 00:49:49 INFO     [conftest] === START tests/test_common.py::test_lamp_timer_boundaries[1-None] ===
+2026-10-25 00:49:50 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:49:51 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (603700) sentry: user: test_user, access: user
+2026-10-25 00:49:51 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:49:52 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (605210) sentry: W303 already in 1 NORMAL
+2026-10-25 00:49:53 INFO     [drivers.sentry_uart] TX lamp on
+2026-10-25 00:49:54 DEBUG    [drivers.sentry_uart] RX block
+lamp on
+I (606720) sentry: [BEACON] on (command) rainbow, 100%, color (255,255,255)
+2026-10-25 00:49:54 INFO     [drivers.sentry_uart] TX lamp timer 1
+2026-10-25 00:49:55 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 1
+I (608230) sentry: [BEACON] auto-off in 1 s
+2026-10-25 00:49:56 INFO     [drivers.sentry_uart] TX lamp timer 0
+2026-10-25 00:49:57 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 0
+I (609750) sentry: [BEACON] timer cancelled
+2026-10-25 00:49:57 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:49:58 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (611260) sentry: W710 measuring is not running
+2026-10-25 00:49:59 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:50:00 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (612770) sentry: W605 schedule is not running
+2026-10-25 00:50:00 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:50:02 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (614280) sentry: W601 relay already off
+I (615260) sentry: [TELEMETRY #21] 00:50:01 up 00:10:14 heap 251KB rssi -26 temp 32.7C depth 41.4m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:50:03 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:50:04 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (616690) sentry: W510 lamp already off
+2026-10-25 00:50:04 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:05 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (618200) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:05 INFO     [conftest] === END tests/test_common.py::test_lamp_timer_boundaries[1-None] ===
+2026-10-25 00:50:05 INFO     [conftest] === START tests/test_common.py::test_lamp_timer_boundaries[3600-None] ===
+2026-10-25 00:50:06 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:50:07 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (619710) sentry: user: test_user, access: user
+2026-10-25 00:50:07 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:08 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (621220) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:09 INFO     [drivers.sentry_uart] TX lamp on
+2026-10-25 00:50:10 DEBUG    [drivers.sentry_uart] RX block
+lamp on
+I (622730) sentry: [BEACON] on (command) rainbow, 100%, color (255,255,255)
+2026-10-25 00:50:10 INFO     [drivers.sentry_uart] TX lamp timer 3600
+2026-10-25 00:50:11 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 3600
+I (624240) sentry: [BEACON] auto-off in 3600 s
+2026-10-25 00:50:12 INFO     [drivers.sentry_uart] TX lamp timer 0
+2026-10-25 00:50:13 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 0
+I (625750) sentry: [BEACON] timer cancelled
+2026-10-25 00:50:13 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:50:14 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (627260) sentry: W710 measuring is not running
+2026-10-25 00:50:15 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:50:16 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (628770) sentry: W605 schedule is not running
+2026-10-25 00:50:16 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:50:17 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (630280) sentry: W601 relay already off
+2026-10-25 00:50:18 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:50:19 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+I (631790) sentry: [BEACON] off (command)
+2026-10-25 00:50:19 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:20 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (633300) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:20 INFO     [conftest] === END tests/test_common.py::test_lamp_timer_boundaries[3600-None] ===
+2026-10-25 00:50:20 INFO     [conftest] === START tests/test_common.py::test_lamp_timer_boundaries[3601-E506] ===
+2026-10-25 00:50:21 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:50:22 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (634810) sentry: user: test_user, access: user
+2026-10-25 00:50:22 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:23 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (636320) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:24 INFO     [drivers.sentry_uart] TX lamp on
+2026-10-25 00:50:25 DEBUG    [drivers.sentry_uart] RX block
+lamp on
+I (637830) sentry: [BEACON] on (command) rainbow, 100%, color (255,255,255)
+2026-10-25 00:50:25 INFO     [drivers.sentry_uart] TX lamp timer 3601
+2026-10-25 00:50:26 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 3601
+E (639340) sentry: E506 timer must be 1-3600 s (0 - cancel)
+2026-10-25 00:50:27 INFO     [drivers.sentry_uart] TX lamp timer 0
+2026-10-25 00:50:28 DEBUG    [drivers.sentry_uart] RX block
+lamp timer 0
+I (640850) sentry: [BEACON] timer cancelled
+2026-10-25 00:50:28 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:50:29 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (642360) sentry: W710 measuring is not running
+2026-10-25 00:50:30 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:50:31 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (643870) sentry: W605 schedule is not running
+2026-10-25 00:50:31 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:50:32 DEBUG    [drivers.sentry_uart] RX block
+I (645260) sentry: [TELEMETRY #22] 00:50:31 up 00:10:44 heap 251KB rssi -26 temp 32.7C depth 41.4m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+relay off
+W (645380) sentry: W601 relay already off
+2026-10-25 00:50:33 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:50:34 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+I (646890) sentry: [BEACON] off (command)
+2026-10-25 00:50:34 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:35 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (648400) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:35 INFO     [conftest] === END tests/test_common.py::test_lamp_timer_boundaries[3601-E506] ===
+# x FAIL BUG-005: relay pulse 99 was accepted. Valve opened, then closed about 110 ms later. E603 was absent.
+2026-10-25 00:50:35 INFO     [conftest] === START tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99] ===
+2026-10-25 00:50:36 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:50:37 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (649960) sentry: user: test_user, access: user
+2026-10-25 00:50:37 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:38 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (651470) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:39 INFO     [drivers.sentry_uart] TX relay pulse 99
+2026-10-25 00:50:40 DEBUG    [drivers.sentry_uart] RX block
+relay pulse 99
+I (652980) sentry: [VALVE] OPEN (pulse)
+I (653090) sentry: [VALVE] CLOSED (pulse end)
+2026-10-25 00:50:40 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:50:41 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (654510) sentry: W710 measuring is not running
+2026-10-25 00:50:42 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:50:43 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (656020) sentry: W605 schedule is not running
+2026-10-25 00:50:43 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:50:44 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (657530) sentry: W601 relay already off
+2026-10-25 00:50:45 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:50:46 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (659040) sentry: W510 lamp already off
+2026-10-25 00:50:46 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:47 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (660550) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:47 INFO     [conftest] === END tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99] ===
+2026-10-25 00:50:47 INFO     [conftest] === START tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[10001] ===
+2026-10-25 00:50:48 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:50:49 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (662060) sentry: user: test_user, access: user
+2026-10-25 00:50:49 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:50:51 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (663570) sentry: W303 already in 1 NORMAL
+2026-10-25 00:50:51 INFO     [drivers.sentry_uart] TX relay pulse 10001
+2026-10-25 00:50:52 DEBUG    [drivers.sentry_uart] RX block
+relay pulse 10001
+E (665080) sentry: E603 pulse must be 100-10000 ms
+2026-10-25 00:50:52 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:50:54 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (666590) sentry: W710 measuring is not running
+2026-10-25 00:50:54 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:50:55 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (668100) sentry: W605 schedule is not running
+2026-10-25 00:50:55 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:50:57 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (669610) sentry: W601 relay already off
+2026-10-25 00:50:57 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:50:58 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (671120) sentry: W510 lamp already off
+2026-10-25 00:50:58 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:00 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (672630) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:00 INFO     [conftest] === END tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[10001] ===
+2026-10-25 00:51:00 INFO     [conftest] === START tests/test_common.py::test_relay_schedule_boundaries[1-2-False] ===
+2026-10-25 00:51:00 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:51:01 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (674140) sentry: user: test_user, access: user
+2026-10-25 00:51:01 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:03 DEBUG    [drivers.sentry_uart] RX block
+I (675460) sentry: [TELEMETRY #23] 00:51:01 up 00:11:15 heap 251KB rssi -26 temp 32.7C depth 41.3m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+state 1
+W (675650) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:03 INFO     [drivers.sentry_uart] TX relay schedule 1 2
+2026-10-25 00:51:04 DEBUG    [drivers.sentry_uart] RX block
+relay schedule 1 2
+E (677160) sentry: E606 usage: relay schedule <on 2-3600 s> <off 2-3600 s> | off
+2026-10-25 00:51:05 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:51:06 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (678670) sentry: W710 measuring is not running
+2026-10-25 00:51:06 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:07 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (680180) sentry: W605 schedule is not running
+2026-10-25 00:51:08 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:51:09 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (681690) sentry: W601 relay already off
+2026-10-25 00:51:09 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:51:10 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (683200) sentry: W510 lamp already off
+2026-10-25 00:51:11 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:12 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (684710) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:12 INFO     [conftest] === END tests/test_common.py::test_relay_schedule_boundaries[1-2-False] ===
+2026-10-25 00:51:12 INFO     [conftest] === START tests/test_common.py::test_relay_schedule_boundaries[2-2-True] ===
+2026-10-25 00:51:12 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:51:13 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (686220) sentry: user: test_user, access: user
+2026-10-25 00:51:14 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:15 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (687730) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:15 INFO     [drivers.sentry_uart] TX relay schedule 2 2
+2026-10-25 00:51:16 DEBUG    [drivers.sentry_uart] RX block
+relay schedule 2 2
+I (689240) sentry: [VALVE] schedule: 2 s on / 2 s off
+I (689250) sentry: [VALVE] OPEN (schedule)
+2026-10-25 00:51:17 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:18 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+I (690750) sentry: [VALVE] schedule stopped
+2026-10-25 00:51:18 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:51:19 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (692260) sentry: W710 measuring is not running
+2026-10-25 00:51:20 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:21 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (693770) sentry: W605 schedule is not running
+2026-10-25 00:51:21 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:51:22 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (695290) sentry: [VALVE] CLOSED (command)
+2026-10-25 00:51:23 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:51:24 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (696790) sentry: W510 lamp already off
+2026-10-25 00:51:24 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:25 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (698300) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:25 INFO     [conftest] === END tests/test_common.py::test_relay_schedule_boundaries[2-2-True] ===
+2026-10-25 00:51:25 INFO     [conftest] === START tests/test_common.py::test_relay_schedule_boundaries[3600-3600-True] ===
+2026-10-25 00:51:26 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:51:27 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (699810) sentry: user: test_user, access: user
+2026-10-25 00:51:27 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:28 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (701320) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:29 INFO     [drivers.sentry_uart] TX relay schedule 3600 3600
+2026-10-25 00:51:30 DEBUG    [drivers.sentry_uart] RX block
+relay schedule 3600 3600
+I (702830) sentry: [VALVE] schedule: 3600 s on / 3600 s off
+I (702830) sentry: [VALVE] OPEN (schedule)
+2026-10-25 00:51:30 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:31 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+I (704340) sentry: [VALVE] schedule stopped
+2026-10-25 00:51:32 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:51:33 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (705850) sentry: W710 measuring is not running
+2026-10-25 00:51:33 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:34 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (707360) sentry: W605 schedule is not running
+2026-10-25 00:51:35 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:51:36 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (708880) sentry: [VALVE] CLOSED (command)
+2026-10-25 00:51:36 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:51:37 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (710380) sentry: W510 lamp already off
+2026-10-25 00:51:38 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:39 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (711890) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:39 INFO     [conftest] === END tests/test_common.py::test_relay_schedule_boundaries[3600-3600-True] ===
+2026-10-25 00:51:39 INFO     [conftest] === START tests/test_common.py::test_relay_schedule_boundaries[3601-2-False] ===
+2026-10-25 00:51:39 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:51:40 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (713400) sentry: user: test_user, access: user
+2026-10-25 00:51:41 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:42 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (714910) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:42 INFO     [drivers.sentry_uart] TX relay schedule 3601 2
+2026-10-25 00:51:43 DEBUG    [drivers.sentry_uart] RX block
+relay schedule 3601 2
+E (716420) sentry: E606 usage: relay schedule <on 2-3600 s> <off 2-3600 s> | off
+2026-10-25 00:51:44 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:51:45 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (717930) sentry: W710 measuring is not running
+2026-10-25 00:51:45 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:46 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (719440) sentry: W605 schedule is not running
+2026-10-25 00:51:47 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:51:48 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (720950) sentry: W601 relay already off
+2026-10-25 00:51:48 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:51:49 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (722460) sentry: W510 lamp already off
+I (722650) sentry: [NAV] depth 41.5 m, heading 272, speed 2.8 kn
+2026-10-25 00:51:50 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:51 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (724060) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:51 INFO     [conftest] === END tests/test_common.py::test_relay_schedule_boundaries[3601-2-False] ===
+2026-10-25 00:51:51 INFO     [conftest] === START tests/test_common.py::test_distance_count_boundaries[0-E704] ===
+2026-10-25 00:51:51 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:51:53 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (725570) sentry: user: test_user, access: user
+2026-10-25 00:51:53 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:51:54 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (727080) sentry: W303 already in 1 NORMAL
+2026-10-25 00:51:54 INFO     [drivers.sentry_uart] TX distance 0
+2026-10-25 00:51:56 DEBUG    [drivers.sentry_uart] RX block
+distance 0
+E (728590) sentry: E704 count must be 1-20
+2026-10-25 00:51:56 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:51:57 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (730100) sentry: W710 measuring is not running
+2026-10-25 00:51:57 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:51:59 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (731610) sentry: W605 schedule is not running
+2026-10-25 00:51:59 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:52:00 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (733120) sentry: W601 relay already off
+2026-10-25 00:52:00 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:52:02 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (734630) sentry: W510 lamp already off
+2026-10-25 00:52:02 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:03 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (736190) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:03 INFO     [conftest] === END tests/test_common.py::test_distance_count_boundaries[0-E704] ===
+2026-10-25 00:52:03 INFO     [conftest] === START tests/test_common.py::test_distance_count_boundaries[1-None] ===
+2026-10-25 00:52:04 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:52:05 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (737700) sentry: user: test_user, access: user
+2026-10-25 00:52:05 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:06 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (739210) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:07 INFO     [drivers.sentry_uart] TX distance 1
+2026-10-25 00:52:08 DEBUG    [drivers.sentry_uart] RX block
+distance 1
+I (740740) sentry: [SONAR] 1/1: 130.7 cm
+I (740840) sentry: [SONAR] avg 130.7 cm (1/1 ok)
+2026-10-25 00:52:08 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:52:09 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (742250) sentry: W710 measuring is not running
+2026-10-25 00:52:10 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:52:11 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (743760) sentry: W605 schedule is not running
+2026-10-25 00:52:11 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:52:12 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (745270) sentry: W601 relay already off
+2026-10-25 00:52:13 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:52:14 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (746780) sentry: W510 lamp already off
+2026-10-25 00:52:14 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:15 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (748290) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:15 INFO     [conftest] === END tests/test_common.py::test_distance_count_boundaries[1-None] ===
+# x FAIL BUG-004: distance 20 returned E704 "count must be 1-20". PRD DS-1 includes 20.
+2026-10-25 00:52:15 INFO     [conftest] === START tests/test_common.py::test_distance_count_boundaries[20-None] ===
+2026-10-25 00:52:16 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:52:17 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (749800) sentry: user: test_user, access: user
+2026-10-25 00:52:17 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:18 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (751310) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:19 INFO     [drivers.sentry_uart] TX distance 20
+2026-10-25 00:52:20 DEBUG    [drivers.sentry_uart] RX block
+distance 20
+E (752820) sentry: E704 count must be 1-20
+2026-10-25 00:52:20 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:52:21 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (754330) sentry: W710 measuring is not running
+2026-10-25 00:52:22 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:52:23 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (755840) sentry: W605 schedule is not running
+2026-10-25 00:52:23 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:52:24 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (757350) sentry: W601 relay already off
+2026-10-25 00:52:25 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:52:26 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (758860) sentry: W510 lamp already off
+2026-10-25 00:52:26 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:27 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (760370) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:27 INFO     [conftest] === END tests/test_common.py::test_distance_count_boundaries[20-None] ===
+2026-10-25 00:52:27 INFO     [conftest] === START tests/test_common.py::test_distance_count_boundaries[21-E704] ===
+2026-10-25 00:52:28 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:52:29 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (761880) sentry: user: test_user, access: user
+2026-10-25 00:52:29 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:30 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (763390) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:31 INFO     [drivers.sentry_uart] TX distance 21
+2026-10-25 00:52:33 DEBUG    [drivers.sentry_uart] RX block
+distance 21
+E (764900) sentry: E704 count must be 1-20
+I (765660) sentry: [TELEMETRY #26] 00:52:32 up 00:12:45 heap 251KB rssi -25 temp 32.7C depth 41.5m hull 5.1bar batt 24.2V valve closed sonar 130.7cm watch disarmed alerts 0 state NORMAL
+2026-10-25 00:52:33 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:52:34 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (767090) sentry: W710 measuring is not running
+2026-10-25 00:52:34 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:52:36 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (768600) sentry: W605 schedule is not running
+2026-10-25 00:52:36 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:52:37 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (770110) sentry: W601 relay already off
+2026-10-25 00:52:37 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:52:39 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (771620) sentry: W510 lamp already off
+2026-10-25 00:52:39 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:40 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (773130) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:40 INFO     [conftest] === END tests/test_common.py::test_distance_count_boundaries[21-E704] ===
+2026-10-25 00:52:40 INFO     [conftest] === START tests/test_common.py::test_distance_log_interval_boundaries[99-E705] ===
+2026-10-25 00:52:40 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:52:42 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (774640) sentry: user: test_user, access: user
+2026-10-25 00:52:42 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:43 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (776150) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:43 INFO     [drivers.sentry_uart] TX distance log 99
+2026-10-25 00:52:45 DEBUG    [drivers.sentry_uart] RX block
+distance log 99
+E (777660) sentry: E705 interval must be 100-5000 ms
+2026-10-25 00:52:45 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:52:46 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (779170) sentry: W710 measuring is not running
+2026-10-25 00:52:47 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:52:48 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (780680) sentry: W605 schedule is not running
+2026-10-25 00:52:48 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:52:49 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (782190) sentry: W601 relay already off
+2026-10-25 00:52:50 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:52:51 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (783700) sentry: W510 lamp already off
+2026-10-25 00:52:51 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:52 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (785210) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:52 INFO     [conftest] === END tests/test_common.py::test_distance_log_interval_boundaries[99-E705] ===
+2026-10-25 00:52:52 INFO     [conftest] === START tests/test_common.py::test_distance_log_interval_boundaries[100-None] ===
+2026-10-25 00:52:53 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:52:54 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (786720) sentry: user: test_user, access: user
+2026-10-25 00:52:54 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:52:55 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (788230) sentry: W303 already in 1 NORMAL
+2026-10-25 00:52:56 INFO     [drivers.sentry_uart] TX distance log 100
+2026-10-25 00:53:04 DEBUG    [drivers.sentry_uart] RX block
+distance log 100
+I (789740) sentry: [SONAR] continuous pinging every 100 ms (command). 'distance stop' to stop
+I (789760) sentry: [SONAR] ping: echo 130.7 cm
+I (789890) sentry: [SONAR] ping: echo 130.7 cm
+I (790010) sentry: [SONAR] ping: echo 130.7 cm
+I (790130) sentry: [SONAR] ping: echo 130.7 cm
+I (790250) sentry: [SONAR] ping: echo 131.2 cm
+I (790370) sentry: [SONAR] ping: echo 131.2 cm
+I (790490) sentry: [SONAR] ping: echo 131.2 cm
+I (790610) sentry: [SONAR] ping: echo 131.2 cm
+I (790730) sentry: [SONAR] ping: echo 131.2 cm
+I (790850) sentry: [SONAR] ping: echo 130.7 cm
+I (790970) sentry: [SONAR] ping: echo 131.2 cm
+I (791090) sentry: [SONAR] ping: echo 130.7 cm
+I (791210) sentry: [SONAR] ping: echo 130.7 cm
+I (791330) sentry: [SONAR] ping: echo 130.7 cm
+I (791450) sentry: [SONAR] ping: echo 130.7 cm
+I (791570) sentry: [SONAR] ping: echo 130.7 cm
+I (791690) sentry: [SONAR] ping: echo 130.7 cm
+I (791810) sentry: [SONAR] ping: echo 130.7 cm
+I (791930) sentry: [SONAR] ping: echo 129.8 cm
+I (792050) sentry: [SONAR] ping: echo 130.7 cm
+I (792170) sentry: [SONAR] ping: echo 130.7 cm
+I (792290) sentry: [SONAR] ping: echo 130.7 cm
+I (792410) sentry: [SONAR] ping: echo 130.7 cm
+I (792530) sentry: [SONAR] ping: echo 130.7 cm
+I (792650) sentry: [SONAR] ping: echo 130.7 cm
+I (792770) sentry: [SONAR] ping: echo 130.7 cm
+I (792890) sentry: [SONAR] ping: echo 130.7 cm
+I (793010) sentry: [SONAR] ping: echo 130.7 cm
+I (793130) sentry: [SONAR] ping: echo 130.7 cm
+I (793250) sentry: [SONAR] ping: echo 130.7 cm
+I (793370) sentry: [SONAR] ping: echo 131.2 cm
+I (793490) sentry: [SONAR] ping: echo 131.2 cm
+I (793610) sentry: [SONAR] ping: echo 130.3 cm
+I (793730) sentry: [SONAR] ping: echo 130.3 cm
+I (793850) sentry: [SONAR] ping: echo 134.3 cm
+I (793970) sentry: [SONAR] ping: echo 129.8 cm
+I (794090) sentry: [SONAR] ping: echo 129.8 cm
+I (794210) sentry: [SONAR] ping: echo 130.3 cm
+I (794330) sentry: [SONAR] ping: echo 129.8 cm
+I (794450) sentry: [SONAR] ping: echo 129.8 cm
+I (794570) sentry: [SONAR] ping: echo 130.3 cm
+I (794690) sentry: [SONAR] ping: echo 131.6 cm
+I (794810) sentry: [SONAR] ping: echo 130.3 cm
+I (794930) sentry: [SONAR] ping: echo 131.2 cm
+I (795050) sentry: [SONAR] ping: echo 131.2 cm
+I (795170) sentry: [SONAR] ping: echo 131.2 cm
+I (795290) sentry: [SONAR] ping: echo 130.3 cm
+I (795410) sentry: [SONAR] ping: echo 130.3 cm
+I (795530) sentry: [SONAR] ping: echo 129.8 cm
+I (795650) sentry: [SONAR] ping: echo 131.2 cm
+I (795660) sentry: [TELEMETRY #27] 00:53:02 up 00:13:15 heap 251KB rssi -26 temp 32.7C depth 41.5m hull 5.1bar batt 24.2V valve closed sonar 131.2cm watch disarmed alerts 0 state NORMAL
+I (795770) sentry: [SONAR] ping: echo 131.2 cm
+I (795890) sentry: [SONAR] ping: echo 131.2 cm
+I (796010) sentry: [SONAR] ping: echo 130.7 cm
+I (796130) sentry: [SONAR] ping: echo 129.4 cm
+I (796250) sentry: [SONAR] ping: echo 130.7 cm
+I (796370) sentry: [SONAR] ping: echo 131.2 cm
+I (796490) sentry: [SONAR] ping: echo 131.2 cm
+I (796610) sentry: [SONAR] ping: echo 131.2 cm
+I (796730) sentry: [SONAR] ping: echo 127.3 cm
+I (796850) sentry: [SONAR] ping: echo 130.3 cm
+I (796970) sentry: [SONAR] ping: echo 130.7 cm
+I (797090) sentry: [SONAR] ping: echo 130.3 cm
+I (797210) sentry: [SONAR] ping: echo 131.2 cm
+I (797330) sentry: [SONAR] ping: echo 131.2 cm
+I (797450) sentry: [SONAR] ping: echo 131.2 cm
+I (797570) sentry: [SONAR] ping: echo 131.2 cm
+2026-10-25 00:53:04 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:05 DEBUG    [drivers.sentry_uart] RX block
+I (798170) sentry: [SONAR] ping: echo 131.2 cm
+distance stop
+I (798290) sentry: [SONAR] ping: echo 131.2 cm
+I (798370) sentry: [SONAR] pinging stopped (command)
+2026-10-25 00:53:06 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:07 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (799780) sentry: W710 measuring is not running
+2026-10-25 00:53:07 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:53:08 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (801290) sentry: W605 schedule is not running
+2026-10-25 00:53:09 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:53:10 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (802800) sentry: W601 relay already off
+2026-10-25 00:53:10 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:53:11 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (804310) sentry: W510 lamp already off
+2026-10-25 00:53:12 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:13 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (805820) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:13 INFO     [conftest] === END tests/test_common.py::test_distance_log_interval_boundaries[100-None] ===
+2026-10-25 00:53:13 INFO     [conftest] === START tests/test_common.py::test_distance_log_interval_boundaries[5000-None] ===
+2026-10-25 00:53:13 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:53:14 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (807330) sentry: user: test_user, access: user
+I (807650) sentry: [ACU] ambient noise 70 dB re 1uPa, sea state 2, water 8.2 C
+2026-10-25 00:53:15 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:16 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (809070) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:16 INFO     [drivers.sentry_uart] TX distance log 5000
+2026-10-25 00:53:18 DEBUG    [drivers.sentry_uart] RX block
+distance log 5000
+I (810580) sentry: [SONAR] continuous pinging every 5000 ms (command). 'distance stop' to stop
+I (810620) sentry: [SONAR] ping: echo 130.7 cm
+2026-10-25 00:53:18 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:19 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+I (812090) sentry: [SONAR] pinging stopped (command)
+2026-10-25 00:53:19 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:21 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (813600) sentry: W710 measuring is not running
+2026-10-25 00:53:21 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:53:22 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (815110) sentry: W605 schedule is not running
+2026-10-25 00:53:22 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:53:24 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (816620) sentry: W601 relay already off
+2026-10-25 00:53:24 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:53:25 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (818130) sentry: W510 lamp already off
+2026-10-25 00:53:25 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:27 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (819640) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:27 INFO     [conftest] === END tests/test_common.py::test_distance_log_interval_boundaries[5000-None] ===
+2026-10-25 00:53:27 INFO     [conftest] === START tests/test_common.py::test_distance_log_interval_boundaries[5001-E705] ===
+2026-10-25 00:53:27 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:53:28 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (821150) sentry: user: test_user, access: user
+2026-10-25 00:53:28 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:30 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (822660) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:30 INFO     [drivers.sentry_uart] TX distance log 5001
+2026-10-25 00:53:31 DEBUG    [drivers.sentry_uart] RX block
+distance log 5001
+E (824170) sentry: E705 interval must be 100-5000 ms
+2026-10-25 00:53:32 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:33 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (825680) sentry: W710 measuring is not running
+I (825860) sentry: [TELEMETRY #28] 00:53:32 up 00:13:45 heap 251KB rssi -26 temp 32.7C depth 41.1m hull 5.1bar batt 24.2V valve closed sonar 130.7cm watch disarmed alerts 0 state NORMAL
+2026-10-25 00:53:33 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:53:34 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (827290) sentry: W605 schedule is not running
+2026-10-25 00:53:35 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:53:36 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (828800) sentry: W601 relay already off
+2026-10-25 00:53:36 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:53:37 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (830310) sentry: W510 lamp already off
+2026-10-25 00:53:38 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:39 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (831820) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:39 INFO     [conftest] === END tests/test_common.py::test_distance_log_interval_boundaries[5001-E705] ===
+2026-10-25 00:53:39 INFO     [conftest] === START tests/test_common.py::test_distance_alarm_boundaries[4-E708] ===
+2026-10-25 00:53:39 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:53:40 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (833330) sentry: user: test_user, access: user
+2026-10-25 00:53:41 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:42 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (834840) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:42 INFO     [drivers.sentry_uart] TX distance alarm 4
+2026-10-25 00:53:43 DEBUG    [drivers.sentry_uart] RX block
+distance alarm 4
+E (836350) sentry: E708 alarm must be 5-300 cm or 'off'
+2026-10-25 00:53:44 INFO     [drivers.sentry_uart] TX distance alarm off
+2026-10-25 00:53:45 DEBUG    [drivers.sentry_uart] RX block
+distance alarm off
+I (837860) sentry: [SONAR] alarm off
+2026-10-25 00:53:45 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:53:46 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (839370) sentry: W710 measuring is not running
+2026-10-25 00:53:47 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:53:48 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (840880) sentry: W605 schedule is not running
+2026-10-25 00:53:48 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:53:49 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (842390) sentry: W601 relay already off
+2026-10-25 00:53:50 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:53:51 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (843900) sentry: W510 lamp already off
+2026-10-25 00:53:51 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:52 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (845410) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:52 INFO     [conftest] === END tests/test_common.py::test_distance_alarm_boundaries[4-E708] ===
+2026-10-25 00:53:52 INFO     [conftest] === START tests/test_common.py::test_distance_alarm_boundaries[5-None] ===
+2026-10-25 00:53:53 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:53:54 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (846920) sentry: user: test_user, access: user
+2026-10-25 00:53:54 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:53:55 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (848430) sentry: W303 already in 1 NORMAL
+2026-10-25 00:53:56 INFO     [drivers.sentry_uart] TX distance alarm 5
+2026-10-25 00:53:57 DEBUG    [drivers.sentry_uart] RX block
+distance alarm 5
+I (849950) sentry: [SONAR] alarm at 5 cm
+2026-10-25 00:53:57 INFO     [drivers.sentry_uart] TX distance alarm off
+2026-10-25 00:53:58 DEBUG    [drivers.sentry_uart] RX block
+distance alarm off
+I (851460) sentry: [SONAR] alarm off
+2026-10-25 00:53:59 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:54:00 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (852960) sentry: W710 measuring is not running
+2026-10-25 00:54:00 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:54:01 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (854470) sentry: W605 schedule is not running
+2026-10-25 00:54:02 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:54:03 DEBUG    [drivers.sentry_uart] RX block
+I (855860) sentry: [TELEMETRY #29] 00:54:02 up 00:14:15 heap 251KB rssi -27 temp 32.7C depth 41.1m hull 5.1bar batt 24.2V valve closed sonar 130.7cm watch disarmed alerts 0 state NORMAL
+relay off
+W (855980) sentry: W601 relay already off
+2026-10-25 00:54:03 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:54:04 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (857490) sentry: W510 lamp already off
+2026-10-25 00:54:05 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:06 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (859000) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:06 INFO     [conftest] === END tests/test_common.py::test_distance_alarm_boundaries[5-None] ===
+2026-10-25 00:54:06 INFO     [conftest] === START tests/test_common.py::test_distance_alarm_boundaries[300-None] ===
+2026-10-25 00:54:06 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:54:07 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (860510) sentry: user: test_user, access: user
+2026-10-25 00:54:08 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:09 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (862020) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:09 INFO     [drivers.sentry_uart] TX distance alarm 300
+2026-10-25 00:54:10 DEBUG    [drivers.sentry_uart] RX block
+distance alarm 300
+I (863540) sentry: [SONAR] alarm at 300 cm
+2026-10-25 00:54:11 INFO     [drivers.sentry_uart] TX distance alarm off
+2026-10-25 00:54:12 DEBUG    [drivers.sentry_uart] RX block
+distance alarm off
+I (865050) sentry: [SONAR] alarm off
+2026-10-25 00:54:12 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:54:13 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (866550) sentry: W710 measuring is not running
+2026-10-25 00:54:14 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:54:15 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (868060) sentry: W605 schedule is not running
+2026-10-25 00:54:15 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:54:17 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (869570) sentry: W601 relay already off
+2026-10-25 00:54:17 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:54:18 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (871080) sentry: W510 lamp already off
+I (871650) sentry: [PWR] battery bus 24.16 V, load 1.8 A
+2026-10-25 00:54:19 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:20 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (873060) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:20 INFO     [conftest] === END tests/test_common.py::test_distance_alarm_boundaries[300-None] ===
+2026-10-25 00:54:20 INFO     [conftest] === START tests/test_common.py::test_distance_alarm_boundaries[301-E708] ===
+2026-10-25 00:54:20 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:54:22 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (874570) sentry: user: test_user, access: user
+2026-10-25 00:54:22 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:23 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (876080) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:23 INFO     [drivers.sentry_uart] TX distance alarm 301
+2026-10-25 00:54:25 DEBUG    [drivers.sentry_uart] RX block
+distance alarm 301
+E (877590) sentry: E708 alarm must be 5-300 cm or 'off'
+2026-10-25 00:54:25 INFO     [drivers.sentry_uart] TX distance alarm off
+2026-10-25 00:54:26 DEBUG    [drivers.sentry_uart] RX block
+distance alarm off
+I (879100) sentry: [SONAR] alarm off
+2026-10-25 00:54:26 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:54:28 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (880610) sentry: W710 measuring is not running
+2026-10-25 00:54:28 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:54:29 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (882120) sentry: W605 schedule is not running
+2026-10-25 00:54:29 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:54:31 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (883630) sentry: W601 relay already off
+2026-10-25 00:54:31 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:54:33 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (885140) sentry: W510 lamp already off
+I (886060) sentry: [TELEMETRY #30] 00:54:32 up 00:14:45 heap 251KB rssi -26 temp 32.7C depth 40.9m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:54:33 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:34 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (887490) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:34 INFO     [conftest] === END tests/test_common.py::test_distance_alarm_boundaries[301-E708] ===
+2026-10-25 00:54:34 INFO     [conftest] === START tests/test_common.py::test_health_interval_boundaries[9-E902] ===
+2026-10-25 00:54:35 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:54:36 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (889000) sentry: user: test_user, access: user
+2026-10-25 00:54:36 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:37 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (890510) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:38 INFO     [drivers.sentry_uart] TX health interval 9
+2026-10-25 00:54:39 DEBUG    [drivers.sentry_uart] RX block
+health interval 9
+E (892020) sentry: E902 interval must be 10-300 s
+2026-10-25 00:54:39 INFO     [drivers.sentry_uart] TX health interval 30
+2026-10-25 00:54:40 DEBUG    [drivers.sentry_uart] RX block
+health interval 30
+I (893530) sentry: [TELEMETRY] interval 30 s
+2026-10-25 00:54:41 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:54:42 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (895040) sentry: W710 measuring is not running
+2026-10-25 00:54:42 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:54:43 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (896550) sentry: W605 schedule is not running
+2026-10-25 00:54:44 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:54:45 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (898060) sentry: W601 relay already off
+2026-10-25 00:54:45 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:54:47 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (899570) sentry: W510 lamp already off
+2026-10-25 00:54:47 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:48 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (901080) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:48 INFO     [conftest] === END tests/test_common.py::test_health_interval_boundaries[9-E902] ===
+2026-10-25 00:54:48 INFO     [conftest] === START tests/test_common.py::test_health_interval_boundaries[10-None] ===
+2026-10-25 00:54:48 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:54:50 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (902590) sentry: user: test_user, access: user
+2026-10-25 00:54:50 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:54:51 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (904100) sentry: W303 already in 1 NORMAL
+2026-10-25 00:54:51 INFO     [drivers.sentry_uart] TX health interval 10
+2026-10-25 00:54:53 DEBUG    [drivers.sentry_uart] RX block
+health interval 10
+I (905620) sentry: [TELEMETRY] interval 10 s
+2026-10-25 00:54:53 INFO     [drivers.sentry_uart] TX health interval 30
+2026-10-25 00:54:54 DEBUG    [drivers.sentry_uart] RX block
+health interval 30
+I (907130) sentry: [TELEMETRY] interval 30 s
+2026-10-25 00:54:54 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:54:56 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (908630) sentry: W710 measuring is not running
+2026-10-25 00:54:56 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:54:57 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (910140) sentry: W605 schedule is not running
+2026-10-25 00:54:57 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:54:59 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (911650) sentry: W601 relay already off
+2026-10-25 00:54:59 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:55:00 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (913160) sentry: W510 lamp already off
+2026-10-25 00:55:00 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:02 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (914670) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:02 INFO     [conftest] === END tests/test_common.py::test_health_interval_boundaries[10-None] ===
+2026-10-25 00:55:02 INFO     [conftest] === START tests/test_common.py::test_health_interval_boundaries[300-None] ===
+2026-10-25 00:55:02 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:55:03 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (916180) sentry: user: test_user, access: user
+2026-10-25 00:55:04 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:05 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (917690) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:05 INFO     [drivers.sentry_uart] TX health interval 300
+2026-10-25 00:55:06 DEBUG    [drivers.sentry_uart] RX block
+health interval 300
+I (919210) sentry: [TELEMETRY] interval 300 s
+2026-10-25 00:55:07 INFO     [drivers.sentry_uart] TX health interval 30
+2026-10-25 00:55:08 DEBUG    [drivers.sentry_uart] RX block
+health interval 30
+I (920720) sentry: [TELEMETRY] interval 30 s
+2026-10-25 00:55:08 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:55:09 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (922220) sentry: W710 measuring is not running
+2026-10-25 00:55:10 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:55:11 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (923730) sentry: W605 schedule is not running
+2026-10-25 00:55:11 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:55:12 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (925240) sentry: W601 relay already off
+2026-10-25 00:55:13 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:55:14 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (926750) sentry: W510 lamp already off
+2026-10-25 00:55:14 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:15 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (928260) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:15 INFO     [conftest] === END tests/test_common.py::test_health_interval_boundaries[300-None] ===
+2026-10-25 00:55:15 INFO     [conftest] === START tests/test_common.py::test_health_interval_boundaries[301-E902] ===
+2026-10-25 00:55:16 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:55:17 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (929770) sentry: user: test_user, access: user
+2026-10-25 00:55:17 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:18 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (931280) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:19 INFO     [drivers.sentry_uart] TX health interval 301
+2026-10-25 00:55:20 DEBUG    [drivers.sentry_uart] RX block
+health interval 301
+E (932790) sentry: E902 interval must be 10-300 s
+2026-10-25 00:55:20 INFO     [drivers.sentry_uart] TX health interval 30
+2026-10-25 00:55:21 DEBUG    [drivers.sentry_uart] RX block
+health interval 30
+I (934300) sentry: [TELEMETRY] interval 30 s
+2026-10-25 00:55:22 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:55:23 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (935810) sentry: W710 measuring is not running
+2026-10-25 00:55:23 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:55:24 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (937320) sentry: W605 schedule is not running
+2026-10-25 00:55:25 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:55:26 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (938830) sentry: W601 relay already off
+2026-10-25 00:55:26 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:55:27 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (940340) sentry: W510 lamp already off
+2026-10-25 00:55:28 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:29 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (941850) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:29 INFO     [conftest] === END tests/test_common.py::test_health_interval_boundaries[301-E902] ===
+2026-10-25 00:55:29 INFO     [conftest] === START tests/test_common.py::test_network_status_commands ===
+2026-10-25 00:55:29 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:55:30 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (943360) sentry: user: test_user, access: user
+2026-10-25 00:55:31 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:32 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (944870) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:32 INFO     [drivers.sentry_uart] TX net
+2026-10-25 00:55:33 DEBUG    [drivers.sentry_uart] RX block
+net
+I (946380) sentry:   ip:      192.168.50.188
+I (946380) sentry:   mask:    255.255.255.0
+I (946380) sentry:   gateway: 192.168.50.1
+I (946380) sentry:   dns:     192.168.50.1
+I (946380) sentry:   mac:     30:30:f9:3b:ec:8c
+2026-10-25 00:55:34 INFO     [drivers.sentry_uart] TX ping
+2026-10-25 00:55:35 DEBUG    [drivers.sentry_uart] RX block
+ping
+I (947890) sentry: ping 8.8.8.8 (8.8.8.8)...
+I (947910) sentry:   reply: time 19 ms
+2026-10-25 00:55:35 INFO     [drivers.sentry_uart] TX time
+2026-10-25 00:55:37 DEBUG    [drivers.sentry_uart] RX block
+I (949920) sentry:   reply: time 32 ms
+2026-10-25 00:55:37 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:55:39 DEBUG    [drivers.sentry_uart] RX block
+I (951890) sentry: ping: 4/4 ok, avg 20 ms
+time
+I (951890) sentry: [LINK] time: 2026-10-25 00:55:38 (Kyiv)
+distance stop
+W (951990) sentry: W710 measuring is not running
+2026-10-25 00:55:39 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:55:40 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (953400) sentry: W605 schedule is not running
+2026-10-25 00:55:41 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:55:42 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (954910) sentry: W601 relay already off
+2026-10-25 00:55:42 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:55:43 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (956420) sentry: W510 lamp already off
+2026-10-25 00:55:44 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:45 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (957930) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:45 INFO     [conftest] === END tests/test_common.py::test_network_status_commands ===
+2026-10-25 00:55:45 INFO     [conftest] === START tests/test_common.py::test_reboot_returns_to_normal_and_keeps_account ===
+2026-10-25 00:55:45 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:55:46 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (959440) sentry: user: test_user, access: user
+2026-10-25 00:55:47 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:55:48 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (960960) sentry: W303 already in 1 NORMAL
+2026-10-25 00:55:48 INFO     [drivers.sentry_uart] TX state 3
+2026-10-25 00:55:49 DEBUG    [drivers.sentry_uart] RX block
+state 3
+W (962470) sentry: [STATE] 1 NORMAL -> 3 VERBOSE (by command)
+I (962470) sentry: [STATE] VERBOSE (tactical): extended logs, telemetry every 10 s, LED heartbeat
+I (962470) sentry: [V] 'state' done in 3 ms
+W (962650) sentry: [LINK] buoy cable tension high, link quality may degrade
+2026-10-25 00:55:50 INFO     [drivers.sentry_uart] TX reboot
+2026-10-25 00:55:53 DEBUG    [drivers.sentry_uart] RX reboot block
+reboot
+I (963860) sentry: rebooting in 3...
+I (964460) sentry: [TELEMETRY #31] 00:55:50 up 00:16:04 heap 251KB rssi -26 temp 32.7C depth 40.7m hull 5.1bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state VERBOSE
+I (964460) sentry: [V] telemetry: min heap 204KB, beacon off, tasks 16, water 8.1C, source auto
+I (964860) sentry: rebooting in 2...
+I (965860) sentry: rebooting in 1...
+I (966860) wifi:state: run -> init (0x0)
+I (966860) wifi:pm stop, total sleep time: 883454766 us / 953793331 us
+
+I (966860) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0
+I (966860) sentry: [V] wifi disconnected, reason 8
+I (966870) wifi:flush txq
+I (966870) wifi:stop sw txq
+I (966870) wifi:lmac stop hw txq
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037d344
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2fa0
+entry 0x403c8908
+I (29) boot: ESP-IDF v6.0.1 2nd stage bootloader
+I (29) boot: compile time Oct  6 2026 02:15:01
+I (29) boot: Multicore bootloader
+I (29) boot: chip revision: v0.2
+I (32) boot: efuse block revision: v1.3
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (40) boot.esp32s3: SPI Mode       : DIO
+I (43) boot.esp32s3: SPI Flash Size : 4MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 otadata          OTA data         01 00 0000f000 00002000
+I (73) boot:  2 ota_0            OTA app          00 10 00020000 00180000
+I (80) boot:  3 ota_1            OTA app          00 11 001a0000 00180000
+I (87) boot: End of partition table
+I (90) esp_image: segment 0: paddr=001a0020 vaddr=3c0a0020 size=38158h (229720) map
+I (138) esp_image: segment 1: paddr=001d8180 vaddr=3fc97200 size=05198h ( 20888) load
+I (143) esp_image: segment 2: paddr=001dd320 vaddr=40374000 size=02cf8h ( 11512) load
+I (146) esp_image: segment 3: paddr=001e0020 vaddr=42000020 size=9c08ch (639116) map
+I (264) esp_image: segment 4: paddr=0027c0b4 vaddr=40376cf8 size=10418h ( 66584) load
+I (279) esp_image: segment 5: paddr=0028c4d4 vaddr=50000000 size=00024h (    36) load
+I (288) boot: Loaded app from partition at offset 0x1a0000
+I (288) boot: Disabling RNG early entropy source...
+I (298) cpu_start: Multicore app
+I (307) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (307) cpu_start: Pro cpu start user code
+I (307) cpu_start: cpu freq: 160000000 Hz
+I (309) app_init: Application information:
+I (313) app_init: Project name:     sentry_fw7
+I (317) app_init: App version:      2.3.0
+I (321) app_init: Compile time:     Oct  6 2026 02:15:26
+I (326) app_init: ELF file SHA256:  ab377c338...
+I (330) app_init: ESP-IDF:          v6.0.1
+I (334) efuse_init: Min chip rev:     v0.0
+I (338) efuse_init: Max chip rev:     v0.99 
+I (342) efuse_init: Chip rev:         v0.2
+I (346) heap_init: Initializing. RAM available for dynamic allocation:
+I (352) heap_init: At 3FCA1360 len 000483B0 (288 KiB): RAM
+I (357) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (362) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (367) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (373) spi_flash: detected chip: boya
+I (376) spi_flash: flash io: dio
+W (379) spi_flash: Detected size(16384k) larger than the size in the binary image header(4096k). Using the size in the binary image header.
+I (392) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (398) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (405) main_task: Started on CPU0
+I (425) main_task: Calling app_main()
+I (445) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C
+I (445) sentry: ==============================================
+I (445) sentry:   SENTRY SWM-2  sonar watch module  fw v2.3.0
+I (445) sentry:   bow sonar array / perimeter watch / CIC link
+I (455) sentry: ==============================================
+I (465) pp: pp rom version: e7ae62f
+I (465) net80211: net80211 rom version: e7ae62f
+I (475) wifi:wifi driver task: 3fced754, prio:23, stack:6656, core=0
+I (475) wifi:wifi firmware version: b37c951
+I (475) wifi:wifi certification version: v7.0
+I (485) wifi:config NVS flash: enabled
+I (485) wifi:config nano formatting: disabled
+I (495) wifi:Init data frame dynamic rx buffer num: 32
+I (495) wifi:Init static rx mgmt buffer num: 5
+I (495) wifi:Init management short buffer num: 32
+I (505) wifi:Init dynamic tx buffer num: 32
+I (505) wifi:Init static tx FG buffer num: 2
+I (515) wifi:Init static rx buffer size: 1600
+I (515) wifi:Init static rx buffer num: 10
+I (515) wifi:Init dynamic rx buffer num: 32
+I (525) wifi_init: rx ba win: 6
+I (525) wifi_init: accept mbox: 6
+I (525) wifi_init: tcpip mbox: 32
+I (535) wifi_init: udp mbox: 6
+I (535) wifi_init: tcp mbox: 6
+I (535) wifi_init: tcp tx win: 5760
+I (545) wifi_init: tcp rx win: 5760
+I (545) wifi_init: tcp mss: 1440
+I (545) wifi_init: WiFi IRAM OP enabled
+I (555) wifi_init: WiFi RX IRAM OP enabled
+I (555) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10
+I (595) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)
+I (605) wifi:mode : sta (30:30:f9:3b:ec:8c)
+I (605) wifi:enable tsf
+I (615) sentry: [LINK] known network 'lol_slow'. Type 'reconnect' to connect
+I (615) sentry: [AUTH] profile 'test_user' registered
+I (615) sentry: last reset: software reboot
+I (615) sentry: build tag: c3VkbyBzM250cnktcjAwdA==
+I (625) sentry: [HW] transducer array: 1 ch, 40 kHz, driver OK
+I (625) sentry: [HW] hull penetrator seal: OK, pressure sensor: OK
+W (635) sentry: [NAV] depth sensor offline (lab mode) - using simulator
+I (645) sentry: [NAV] carrier: SSK 'Skat', bow sonar bay #2, depth 41.8 m
+I (645) sentry: [OTA] running v2.3.0 from ota_1
+I (655) sentry: ready. state 1 NORMAL (patrol). Type 'help'
+I (655) main_task: Returned from app_main()
+2026-10-25 00:55:54 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:55:55 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (1185) sentry: not logged in
+2026-10-25 00:55:55 INFO     [drivers.sentry_uart] TX reconnect
+2026-10-25 00:56:00 DEBUG    [drivers.sentry_uart] RX block
+reconnect
+I (2795) sentry: [LINK] raising buoy antenna, connecting to 'lol_slow'...
+I (4095) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0
+I (4095) wifi:state: init -> auth (0xb0)
+I (4095) wifi:state: auth -> assoc (0x0)
+I (4095) wifi:state: assoc -> run (0x10)
+I (4125) wifi:connected with lol_slow, aid = 20, channel 11, BW20, bssid = c8:7f:54:3c:06:38
+I (4125) wifi:security: WPA2-PSK, phy: bg, rssi: -28, cipher(pairwise:0x3, group:0x3), pmf:0
+I (4125) wifi:pm start, type: 1
+
+I (4135) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (4135) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (4145) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (5165) esp_netif_handlers: sta ip: 192.168.50.188, mask: 255.255.255.0, gw: 192.168.50.1
+I (5165) sentry: [LINK] got ip 192.168.50.188
+I (5165) sentry: [LINK] connected to 'lol_slow', rssi -28 dBm (excellent)
+I (5505) esp-x509-crt-bundle: Certificate validated
+I (6295) sentry: [LINK] fleet network reachable (internet OK)
+2026-10-25 00:56:00 INFO     [drivers.sentry_uart] TX login <redacted>
+2026-10-25 00:56:03 DEBUG    [drivers.sentry_uart] RX block
+I (8985) sentry: [LINK] time: synced via NTP, 00:56:02
+login test_user ***
+I (9085) sentry: [AUTH] operator test_user on watch, console 2
+I (9255) sentry: [TELEMETRY] auto report every 30 s ('health off' to stop)
+2026-10-25 00:56:03 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:56:05 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (10705) sentry: user: test_user, access: user
+2026-10-25 00:56:05 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:56:06 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (12215) sentry: W710 measuring is not running
+2026-10-25 00:56:06 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:56:08 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (13725) sentry: W605 schedule is not running
+2026-10-25 00:56:08 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:56:09 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (15235) sentry: W601 relay already off
+2026-10-25 00:56:09 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:56:11 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (16745) sentry: W510 lamp already off
+2026-10-25 00:56:11 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:12 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (18255) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:12 INFO     [conftest] === END tests/test_common.py::test_reboot_returns_to_normal_and_keeps_account ===
+2026-10-25 00:56:12 INFO     [conftest] === START tests/test_smoke.py::test_version_matches_configuration ===
+2026-10-25 00:56:12 INFO     [drivers.sentry_uart] TX version
+2026-10-25 00:56:14 DEBUG    [drivers.sentry_uart] RX block
+version
+I (19765) sentry: SENTRY SWM-2 sonar watch module, fw v2.3.0 (build Oct  6 2026 02:15:26)
+I (19765) sentry:   partition: ota_1 @ 0x1a0000, state: valid
+I (20655) sentry: [NAV] depth 42.0 m, heading 274, speed 2.9 kn
+2026-10-25 00:56:14 INFO     [conftest] === END tests/test_smoke.py::test_version_matches_configuration ===
+2026-10-25 00:56:14 INFO     [conftest] === START tests/test_smoke.py::test_help_exposes_required_command_groups ===
+2026-10-25 00:56:15 INFO     [drivers.sentry_uart] TX help
+2026-10-25 00:56:16 DEBUG    [drivers.sentry_uart] RX block
+help
+I (22075) sentry: Commands ([wifi] - needs Wi-Fi, [login] - needs Wi-Fi + login, [debug] - debug access):
+I (22075) sentry: System:
+I (22075) sentry:   help                         - this help
+I (22075) sentry:   status                       - full device status
+I (22085) sentry:   version                      - firmware version and partition
+I (22085) sentry:   sysinfo                      - chip, memory, uptime
+I (22095) sentry:   temp                         - chip temperature
+I (22105) sentry:   uptime                       - time since boot
+I (22105) sentry:   reboot                       - reboot device
+I (22115) sentry: Buoy link (Wi-Fi):
+I (22115) sentry:   connect                      - connect to Wi-Fi (scan, SSID, password)
+I (22125) sentry:   reconnect                    - connect to known network
+I (22135) sentry:   forget                       - forget known network
+I (22135) sentry:   disconnect                   - disconnect from Wi-Fi
+I (22145) sentry:   scan                         - list Wi-Fi networks
+I (22155) sentry:   net                          - IP, gateway, DNS, MAC [wifi]
+I (22155) sentry:   ping [host]                  - ping host (default 8.8.8.8) [wifi]
+I (22165) sentry:   time                         - current time (NTP) [wifi]
+I (22175) sentry: Account:
+I (22175) sentry:   register <login> <pass>      - create profile (one per device) [wifi]
+I (22185) sentry:   login <login> <pass>         - start session [wifi]
+I (22185) sentry:   logout                       - end session
+I (22195) sentry:   whoami                       - current user and access
+I (22205) sentry:   passwd <old> <new>           - change password [login]
+I (22205) sentry:   sudo <password>              - elevate current user to debug [login]
+I (22215) sentry: States:
+I (22215) sentry:   state [1-4|name]             - show / change system state [login]
+I (22225) sentry: OTA:
+I (22225) sentry:   ota [status]                 - running / previous firmware [login]
+I (22235) sentry:   ota check                    - check stable and beta channels [login]
+I (22245) sentry:   ota update [beta]            - update to stable (or beta) [login]
+I (22255) sentry:   ota install <X.Y.Z> [force]  - install exact version (force - allow downgrade) [login]
+I (22255) sentry:   ota broken                   - install broken build (rollback test) [login]
+I (22265) sentry:   ota rollback                 - boot previous firmware [login]
+I (22275) sentry:   ota url <url> [force]        - install image from any http(s) link [login]
+I (22285) sentry:   ota server [<url>|default]   - show / set update server (default - GitHub) [login]
+I (22295) sentry: Beacon light (alias: beacon):
+I (22295) sentry:   lamp on|off|toggle           - Smart Lamp power [login]
+I (22305) sentry:   lamp status                  - lamp settings [login]
+I (22305) sentry:   lamp color <name|R G B>      - white red green blue yellow purple cyan orange [login]
+I (22315) sentry:   lamp brightness <0-100>      - brightness, % [login]
+I (22325) sentry:   lamp mode <mode>             - solid | blink | breathe | rainbow [login]
+I (22335) sentry:   lamp timer <sec>             - auto-off 1-3600 s (0 - cancel) [login]
+I (22345) sentry:   lamp scene save|load <1-3>   - save / load lamp preset [login]
+I (22345) sentry: Trim valve (alias: valve, open|close):
+I (22355) sentry:   relay on|off|toggle          - relay + indicator diode [login]
+I (22365) sentry:   relay status                 - state, auto mode, switch counter [login]
+I (22365) sentry:   relay pulse <ms>             - turn on for 100-10000 ms [login]
+I (22375) sentry:   relay schedule <on> <off>    - cycle on/off in seconds ('off' - stop) [login]
+I (22385) sentry:   relay auto on|off            - turn relay on by distance alarm [login]
+I (22395) sentry:   relay health                 - contact wear and coil check [login]
+I (22405) sentry: Active sonar (alias: sonar):
+I (22405) sentry:   distance [N]                 - measure once or N times (1-20) [login]
+I (22415) sentry:   distance log [ms] | stop     - continuous measuring 100-5000 ms [login]
+I (22425) sentry:   distance calibrate <cm>      - calibrate by reference object ('reset') [login]
+I (22425) sentry:   distance alarm <cm>|off      - alarm threshold 5-300 cm [login]
+I (22435) sentry:   distance filter on|off       - median filter of 5 samples [login]
+I (22445) sentry:   distance stats|history       - statistics / last 10 measurements [login]
+I (22455) sentry: Telemetry (alias: telemetry):
+I (22455) sentry:   health now                   - health report now [login]
+I (22465) sentry:   health on|off                - auto report (after login, 30 s) [login]
+I (22475) sentry:   health interval <sec>        - auto interval 10-300 s (VERBOSE 10 s) [login]
+I (22485) sentry: Perimeter watch (alias: watch):
+I (22485) sentry:   guard [status]               - SENTRY Guard state [login]
+I (22495) sentry:   guard arm                    - arm (10 s exit delay) [login]
+I (22495) sentry:   guard disarm <pin>           - disarm / stop alarm [login]
+I (22505) sentry:   guard pin <old> <new>        - change 4-digit PIN [login]
+I (22515) sentry:   guard zone <cm>              - intrusion distance 10-200 cm [login]
+I (22525) sentry:   guard panic                  - trigger alarm now [login]
+I (22525) sentry:   guard log                    - last 10 guard events [login]
+I (22535) sentry: CIC alerts (alias: cic):
+I (22535) sentry:   alert [list]                 - alert center [login]
+I (22545) sentry:   alert ack [id|all]           - acknowledge last / by id / all [login]
+I (22555) sentry:   alert clear                  - delete acknowledged alerts [login]
+I (22555) sentry:   alert test <level>           - info | warning | critical [login]
+I (22565) sentry: Buttons [login]:
+I (22575) sentry:   K1 press / hold 1.5 s        - beacon on/off / next color
+I (22575) sentry:   K2 press / hold 1.5 s        - valve open/close / 1 s pulse
+I (22585) sentry:   K3 press                     - active sonar for 30 s (press again - stop)
+I (22595) sentry:   K4 press / hold 1.5 s        - acknowledge last CIC alert / PANIC
+I (22595) sentry:   hold 2 s: K1+K2 - 1 NORMAL, K2+K3 - 2 DEBUG, K3+K4 - 3 VERBOSE, K4+K1 - 4 EMERGENCY (only from 3)
+2026-10-25 00:56:16 INFO     [conftest] === END tests/test_smoke.py::test_help_exposes_required_command_groups ===
+# x FAIL test fault, not a DUT fault: status has "link:", and the test required "Wi-Fi".
+2026-10-25 00:56:16 INFO     [conftest] === START tests/test_smoke.py::test_status_reports_core_state ===
+2026-10-25 00:56:17 INFO     [drivers.sentry_uart] TX status
+2026-10-25 00:56:18 DEBUG    [drivers.sentry_uart] RX block
+status
+I (24035) sentry: === SWM-2 status ===
+I (24035) sentry:   fw:       v2.3.0 (ota_1)
+I (24035) sentry:   state:    1 NORMAL
+I (24035) sentry:   link:     buoy link 'lol_slow', ip 192.168.50.188, rssi -26 dBm (excellent), ch 11
+I (24035) sentry:   internet: OK
+I (24045) sentry:   user:     test_user (user)
+I (24045) sentry:   time:     00:56:17, uptime 0h 00m 23s
+I (24055) sentry:   valve:    closed
+I (24055) sentry:   watch:    disarmed, CIC alerts unacked: 0
+I (24065) sentry:   sonar:    no contact
+I (24065) sentry:   carrier:  depth 42.0 m, hull 5.2 bar, water 8.2 C, battery 24.20 V (sim)
+I (24075) sentry:   heap:     251 KB free
+2026-10-25 00:56:18 INFO     [conftest] === END tests/test_smoke.py::test_status_reports_core_state ===
+2026-10-25 00:56:18 INFO     [conftest] === START tests/test_smoke.py::test_unknown_command_has_documented_error ===
+2026-10-25 00:56:18 INFO     [drivers.sentry_uart] TX definitely_not_a_sentry_command
+2026-10-25 00:56:19 DEBUG    [drivers.sentry_uart] RX block
+definitely_not_a_sentry_command
+E (25545) sentry: E001 unknown command 'definitely_not_a_sentry'. Type 'help'
+2026-10-25 00:56:19 INFO     [conftest] === END tests/test_smoke.py::test_unknown_command_has_documented_error ===
+2026-10-25 00:56:19 INFO     [conftest] === START tests/test_smoke.py::test_login_access_gate_and_recovery ===
+2026-10-25 00:56:20 INFO     [drivers.sentry_uart] TX logout
+2026-10-25 00:56:21 DEBUG    [drivers.sentry_uart] RX block
+logout
+I (27055) sentry: [AUTH] operator test_user relieved from watch
+2026-10-25 00:56:21 INFO     [drivers.sentry_uart] TX lamp status
+2026-10-25 00:56:22 DEBUG    [drivers.sentry_uart] RX block
+lamp status
+E (28565) sentry: E003 login required. Use 'login <login> <pass>' or 'register'
+2026-10-25 00:56:23 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:56:24 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (30075) sentry: not logged in
+2026-10-25 00:56:24 INFO     [drivers.sentry_uart] TX reconnect
+2026-10-25 00:56:25 DEBUG    [drivers.sentry_uart] RX block
+reconnect
+W (31585) sentry: W114 already connected
+2026-10-25 00:56:26 INFO     [drivers.sentry_uart] TX login <redacted>
+2026-10-25 00:56:27 DEBUG    [drivers.sentry_uart] RX block
+login test_user ***
+I (33095) sentry: [AUTH] operator test_user on watch, console 2
+I (33255) sentry: [TELEMETRY] auto report every 30 s ('health off' to stop)
+2026-10-25 00:56:27 INFO     [conftest] === END tests/test_smoke.py::test_login_access_gate_and_recovery ===
+2026-10-25 00:56:27 INFO     [conftest] === START tests/test_v210.py::test_future_features_report_planned[guard status] ===
+2026-10-25 00:56:27 INFO     [conftest] === END tests/test_v210.py::test_future_features_report_planned[guard status] ===
+2026-10-25 00:56:27 INFO     [conftest] === START tests/test_v210.py::test_future_features_report_planned[guard arm] ===
+2026-10-25 00:56:27 INFO     [conftest] === END tests/test_v210.py::test_future_features_report_planned[guard arm] ===
+2026-10-25 00:56:27 INFO     [conftest] === START tests/test_v210.py::test_future_features_report_planned[alert list] ===
+2026-10-25 00:56:27 INFO     [conftest] === END tests/test_v210.py::test_future_features_report_planned[alert list] ===
+2026-10-25 00:56:27 INFO     [conftest] === START tests/test_v210.py::test_future_features_report_planned[alert test info] ===
+2026-10-25 00:56:27 INFO     [conftest] === END tests/test_v210.py::test_future_features_report_planned[alert test info] ===
+2026-10-25 00:56:27 INFO     [conftest] === START tests/test_v230.py::test_guard_zone_boundaries[9-E808] ===
+2026-10-25 00:56:27 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:56:28 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (34675) sentry: user: test_user, access: user
+2026-10-25 00:56:29 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:30 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (36185) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:30 INFO     [drivers.sentry_uart] TX guard zone 9
+2026-10-25 00:56:32 DEBUG    [drivers.sentry_uart] RX block
+guard zone 9
+E (37695) sentry: E808 zone must be 10-200 cm
+2026-10-25 00:56:32 INFO     [drivers.sentry_uart] TX guard zone 50
+2026-10-25 00:56:33 DEBUG    [drivers.sentry_uart] RX block
+guard zone 50
+I (39205) sentry: [WATCH] zone < 50 cm
+2026-10-25 00:56:33 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:56:35 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (40715) sentry: W710 measuring is not running
+2026-10-25 00:56:35 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:56:36 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (42225) sentry: W605 schedule is not running
+2026-10-25 00:56:36 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:56:38 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (43735) sentry: W601 relay already off
+2026-10-25 00:56:38 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:56:39 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (45245) sentry: W510 lamp already off
+2026-10-25 00:56:39 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:41 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (46755) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:41 INFO     [conftest] === END tests/test_v230.py::test_guard_zone_boundaries[9-E808] ===
+2026-10-25 00:56:41 INFO     [conftest] === START tests/test_v230.py::test_guard_zone_boundaries[10-None] ===
+2026-10-25 00:56:41 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:56:42 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (48265) sentry: user: test_user, access: user
+2026-10-25 00:56:42 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:44 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (49775) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:44 INFO     [drivers.sentry_uart] TX guard zone 10
+2026-10-25 00:56:45 DEBUG    [drivers.sentry_uart] RX block
+guard zone 10
+I (51295) sentry: [WATCH] zone < 10 cm
+2026-10-25 00:56:46 INFO     [drivers.sentry_uart] TX guard zone 50
+2026-10-25 00:56:47 DEBUG    [drivers.sentry_uart] RX block
+guard zone 50
+I (52805) sentry: [WATCH] zone < 50 cm
+2026-10-25 00:56:47 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:56:48 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (54305) sentry: W710 measuring is not running
+2026-10-25 00:56:49 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:56:50 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (55815) sentry: W605 schedule is not running
+2026-10-25 00:56:50 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:56:51 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (57325) sentry: W601 relay already off
+2026-10-25 00:56:52 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:56:53 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (58835) sentry: W510 lamp already off
+2026-10-25 00:56:53 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:54 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (60345) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:54 INFO     [conftest] === END tests/test_v230.py::test_guard_zone_boundaries[10-None] ===
+2026-10-25 00:56:54 INFO     [conftest] === START tests/test_v230.py::test_guard_zone_boundaries[200-None] ===
+2026-10-25 00:56:55 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:56:56 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (61855) sentry: user: test_user, access: user
+2026-10-25 00:56:56 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:56:57 DEBUG    [drivers.sentry_uart] RX block
+I (63255) sentry: [TELEMETRY #1] 00:56:56 up 00:01:02 heap 251KB rssi -28 temp 32.7C depth 42.0m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+state 1
+W (63365) sentry: W303 already in 1 NORMAL
+2026-10-25 00:56:57 INFO     [drivers.sentry_uart] TX guard zone 200
+2026-10-25 00:56:59 DEBUG    [drivers.sentry_uart] RX block
+guard zone 200
+I (64785) sentry: [WATCH] zone < 200 cm
+2026-10-25 00:56:59 INFO     [drivers.sentry_uart] TX guard zone 50
+2026-10-25 00:57:00 DEBUG    [drivers.sentry_uart] RX block
+guard zone 50
+I (66295) sentry: [WATCH] zone < 50 cm
+2026-10-25 00:57:01 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:57:02 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (67795) sentry: W710 measuring is not running
+2026-10-25 00:57:02 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:57:03 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (69305) sentry: W605 schedule is not running
+2026-10-25 00:57:04 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:57:05 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (70815) sentry: W601 relay already off
+2026-10-25 00:57:05 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:57:06 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (72325) sentry: W510 lamp already off
+2026-10-25 00:57:07 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:08 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (73835) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:08 INFO     [conftest] === END tests/test_v230.py::test_guard_zone_boundaries[200-None] ===
+2026-10-25 00:57:08 INFO     [conftest] === START tests/test_v230.py::test_guard_zone_boundaries[201-E808] ===
+2026-10-25 00:57:08 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:57:09 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (75345) sentry: user: test_user, access: user
+2026-10-25 00:57:10 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:11 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (76855) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:11 INFO     [drivers.sentry_uart] TX guard zone 201
+2026-10-25 00:57:12 DEBUG    [drivers.sentry_uart] RX block
+guard zone 201
+E (78365) sentry: E808 zone must be 10-200 cm
+2026-10-25 00:57:13 INFO     [drivers.sentry_uart] TX guard zone 50
+2026-10-25 00:57:14 DEBUG    [drivers.sentry_uart] RX block
+guard zone 50
+I (79875) sentry: [WATCH] zone < 50 cm
+2026-10-25 00:57:14 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:57:15 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (81385) sentry: W710 measuring is not running
+2026-10-25 00:57:16 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:57:17 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (82895) sentry: W605 schedule is not running
+2026-10-25 00:57:17 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:57:18 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (84405) sentry: W601 relay already off
+2026-10-25 00:57:19 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:57:20 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (85915) sentry: W510 lamp already off
+2026-10-25 00:57:20 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:21 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (87425) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:21 INFO     [conftest] === END tests/test_v230.py::test_guard_zone_boundaries[201-E808] ===
+2026-10-25 00:57:21 INFO     [conftest] === START tests/test_v230.py::test_guard_pin_format_validation[123] ===
+2026-10-25 00:57:22 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:57:23 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (88935) sentry: user: test_user, access: user
+2026-10-25 00:57:23 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:24 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (90445) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:25 INFO     [drivers.sentry_uart] TX guard pin 1234 123
+2026-10-25 00:57:26 DEBUG    [drivers.sentry_uart] RX block
+guard pin *** 123
+E (91955) sentry: E804 PIN must be 4 digits
+2026-10-25 00:57:26 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:57:27 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+I (93455) sentry: [TELEMETRY #2] 00:57:26 up 00:01:33 heap 251KB rssi -27 temp 32.7C depth 42.0m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+W (93465) sentry: W710 measuring is not running
+2026-10-25 00:57:28 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:57:29 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (94975) sentry: W605 schedule is not running
+2026-10-25 00:57:29 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:57:30 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (96485) sentry: W601 relay already off
+I (96655) sentry: [ACU] ambient noise 68 dB re 1uPa, sea state 2, water 8.0 C
+2026-10-25 00:57:31 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:57:32 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (98075) sentry: W510 lamp already off
+2026-10-25 00:57:32 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:33 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (99585) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:33 INFO     [conftest] === END tests/test_v230.py::test_guard_pin_format_validation[123] ===
+2026-10-25 00:57:33 INFO     [conftest] === START tests/test_v230.py::test_guard_pin_format_validation[12345] ===
+2026-10-25 00:57:34 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:57:35 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (101095) sentry: user: test_user, access: user
+2026-10-25 00:57:35 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:36 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (102605) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:37 INFO     [drivers.sentry_uart] TX guard pin 1234 12345
+2026-10-25 00:57:38 DEBUG    [drivers.sentry_uart] RX block
+guard pin *** ***5
+E (104115) sentry: E804 PIN must be 4 digits
+2026-10-25 00:57:38 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:57:39 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (105625) sentry: W710 measuring is not running
+2026-10-25 00:57:40 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:57:41 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (107135) sentry: W605 schedule is not running
+2026-10-25 00:57:41 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:57:42 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (108645) sentry: W601 relay already off
+2026-10-25 00:57:43 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:57:44 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (110155) sentry: W510 lamp already off
+2026-10-25 00:57:44 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:45 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (111665) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:45 INFO     [conftest] === END tests/test_v230.py::test_guard_pin_format_validation[12345] ===
+2026-10-25 00:57:45 INFO     [conftest] === START tests/test_v230.py::test_guard_pin_format_validation[abcd] ===
+2026-10-25 00:57:46 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:57:47 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (113175) sentry: user: test_user, access: user
+2026-10-25 00:57:47 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:49 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (114685) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:49 INFO     [drivers.sentry_uart] TX guard pin 1234 abcd
+2026-10-25 00:57:50 DEBUG    [drivers.sentry_uart] RX block
+guard pin *** abcd
+E (116195) sentry: E804 PIN must be 4 digits
+2026-10-25 00:57:50 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:57:52 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (117705) sentry: W710 measuring is not running
+2026-10-25 00:57:52 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:57:53 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (119215) sentry: W605 schedule is not running
+2026-10-25 00:57:53 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:57:55 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (120725) sentry: W601 relay already off
+2026-10-25 00:57:55 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:57:56 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (122235) sentry: W510 lamp already off
+2026-10-25 00:57:56 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:57:58 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (123785) sentry: W303 already in 1 NORMAL
+2026-10-25 00:57:58 INFO     [conftest] === END tests/test_v230.py::test_guard_pin_format_validation[abcd] ===
+2026-10-25 00:57:58 INFO     [conftest] === START tests/test_v230.py::test_guard_status_is_available ===
+2026-10-25 00:57:58 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:57:59 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (125295) sentry: user: test_user, access: user
+2026-10-25 00:58:00 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:01 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (126805) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:01 INFO     [drivers.sentry_uart] TX guard status
+2026-10-25 00:58:02 DEBUG    [drivers.sentry_uart] RX block
+guard status
+I (128315) sentry: [WATCH] disarmed, zone 50 cm, last distance -1.0 cm
+2026-10-25 00:58:03 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:58:04 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (129825) sentry: W710 measuring is not running
+2026-10-25 00:58:04 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:58:05 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (131335) sentry: W605 schedule is not running
+2026-10-25 00:58:06 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:58:07 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (132845) sentry: W601 relay already off
+2026-10-25 00:58:07 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:58:08 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (134355) sentry: W510 lamp already off
+2026-10-25 00:58:09 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:10 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (135865) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:10 INFO     [conftest] === END tests/test_v230.py::test_guard_status_is_available ===
+2026-10-25 00:58:10 INFO     [conftest] === START tests/test_v230.py::test_alert_create_acknowledge_and_clear[info] ===
+2026-10-25 00:58:10 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:58:11 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (137375) sentry: user: test_user, access: user
+2026-10-25 00:58:12 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:13 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (138885) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:13 INFO     [drivers.sentry_uart] TX alert test info
+2026-10-25 00:58:14 DEBUG    [drivers.sentry_uart] RX block
+alert test info
+I (140395) sentry: [CIC #1 INFO] test: test alert
+2026-10-25 00:58:15 INFO     [drivers.sentry_uart] TX alert ack
+2026-10-25 00:58:16 DEBUG    [drivers.sentry_uart] RX block
+alert ack
+I (141905) sentry: [CIC] #1 acknowledged (command). Unacked: 0
+2026-10-25 00:58:16 INFO     [drivers.sentry_uart] TX alert list
+2026-10-25 00:58:17 DEBUG    [drivers.sentry_uart] RX block
+alert list
+I (143415) sentry: [CIC] 1 alerts, 0 unacknowledged:
+I (143415) sentry:   #1   00:58:13 INFO       test    test alert
+2026-10-25 00:58:18 INFO     [drivers.sentry_uart] TX alert ack all
+2026-10-25 00:58:19 DEBUG    [drivers.sentry_uart] RX block
+alert ack all
+W (144925) sentry: W853 no unacknowledged alerts
+2026-10-25 00:58:19 INFO     [drivers.sentry_uart] TX alert clear
+2026-10-25 00:58:20 DEBUG    [drivers.sentry_uart] RX block
+alert clear
+I (146435) sentry: [CIC] cleared
+2026-10-25 00:58:21 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:58:22 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (147945) sentry: W710 measuring is not running
+2026-10-25 00:58:22 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:58:23 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (149455) sentry: W605 schedule is not running
+2026-10-25 00:58:24 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:58:25 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (150965) sentry: W601 relay already off
+2026-10-25 00:58:25 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:58:26 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (152475) sentry: W510 lamp already off
+2026-10-25 00:58:27 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:28 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (153985) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:28 INFO     [conftest] === END tests/test_v230.py::test_alert_create_acknowledge_and_clear[info] ===
+2026-10-25 00:58:28 INFO     [conftest] === START tests/test_v230.py::test_alert_create_acknowledge_and_clear[warning] ===
+2026-10-25 00:58:28 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:58:29 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (155495) sentry: user: test_user, access: user
+2026-10-25 00:58:30 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:31 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (157005) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:31 INFO     [drivers.sentry_uart] TX alert test warning
+2026-10-25 00:58:32 DEBUG    [drivers.sentry_uart] RX block
+alert test warning
+W (158515) sentry: [CIC #2 WARNING] test: test alert
+2026-10-25 00:58:33 INFO     [drivers.sentry_uart] TX alert ack
+2026-10-25 00:58:34 DEBUG    [drivers.sentry_uart] RX block
+alert ack
+I (160025) sentry: [CIC] #2 acknowledged (command). Unacked: 0
+2026-10-25 00:58:34 INFO     [drivers.sentry_uart] TX alert list
+2026-10-25 00:58:35 DEBUG    [drivers.sentry_uart] RX block
+alert list
+I (161535) sentry: [CIC] 1 alerts, 0 unacknowledged:
+I (161535) sentry:   #2   00:58:31 WARNING    test    test alert
+2026-10-25 00:58:36 INFO     [drivers.sentry_uart] TX alert ack all
+2026-10-25 00:58:37 DEBUG    [drivers.sentry_uart] RX block
+alert ack all
+W (163045) sentry: W853 no unacknowledged alerts
+2026-10-25 00:58:37 INFO     [drivers.sentry_uart] TX alert clear
+2026-10-25 00:58:38 DEBUG    [drivers.sentry_uart] RX block
+alert clear
+I (164555) sentry: [CIC] cleared
+2026-10-25 00:58:39 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:58:40 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (166065) sentry: W710 measuring is not running
+I (166655) sentry: [PWR] battery bus 24.19 V, load 1.9 A
+2026-10-25 00:58:41 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:58:42 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (168065) sentry: W605 schedule is not running
+2026-10-25 00:58:42 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:58:43 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (169575) sentry: W601 relay already off
+2026-10-25 00:58:44 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:58:45 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (171085) sentry: W510 lamp already off
+2026-10-25 00:58:45 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:46 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (172595) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:46 INFO     [conftest] === END tests/test_v230.py::test_alert_create_acknowledge_and_clear[warning] ===
+2026-10-25 00:58:46 INFO     [conftest] === START tests/test_v230.py::test_alert_create_acknowledge_and_clear[critical] ===
+2026-10-25 00:58:47 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:58:48 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (174105) sentry: user: test_user, access: user
+2026-10-25 00:58:48 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:58:49 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (175615) sentry: W303 already in 1 NORMAL
+2026-10-25 00:58:50 INFO     [drivers.sentry_uart] TX alert test critical
+2026-10-25 00:58:51 DEBUG    [drivers.sentry_uart] RX block
+alert test critical
+E (177125) sentry: [CIC #3 CRITICAL] test: test alert
+I (177125) sentry: [VALVE] OPEN (critical alert)
+W (177125) sentry: [STATE] 1 NORMAL -> 3 VERBOSE (by critical alert)
+I (177125) sentry: [STATE] VERBOSE (tactical): extended logs, telemetry every 10 s, LED heartbeat
+I (177135) sentry: [V] 'alert' done in 13 ms
+W (177655) sentry: [ACU] biologics detected (snapping shrimp), passive filter on
+2026-10-25 00:58:52 INFO     [drivers.sentry_uart] TX alert ack
+2026-10-25 00:58:53 DEBUG    [drivers.sentry_uart] RX block
+alert ack
+I (179075) sentry: [CIC] #3 acknowledged (command). Unacked: 0
+I (179075) sentry: [V] 'alert' done in 0 ms
+2026-10-25 00:58:53 INFO     [drivers.sentry_uart] TX alert list
+2026-10-25 00:58:54 DEBUG    [drivers.sentry_uart] RX block
+alert list
+I (180585) sentry: [CIC] 1 alerts, 0 unacknowledged:
+I (180585) sentry:   #3   00:58:50 CRITICAL   test    test alert
+I (180585) sentry: [V] 'alert' done in 0 ms
+2026-10-25 00:58:55 INFO     [drivers.sentry_uart] TX alert ack all
+2026-10-25 00:58:56 DEBUG    [drivers.sentry_uart] RX block
+alert ack all
+W (182095) sentry: W853 no unacknowledged alerts
+I (182095) sentry: [V] 'alert' done in 0 ms
+2026-10-25 00:58:56 INFO     [drivers.sentry_uart] TX alert clear
+2026-10-25 00:58:57 DEBUG    [drivers.sentry_uart] RX block
+alert clear
+I (183605) sentry: [CIC] cleared
+I (183605) sentry: [V] 'alert' done in 0 ms
+I (183655) sentry: [TELEMETRY #5] 00:58:56 up 00:03:03 heap 251KB rssi -27 temp 32.7C depth 41.2m hull 5.1bar batt 24.2V valve open sonar - watch disarmed alerts 0 state VERBOSE
+I (183655) sentry: [V] telemetry: min heap 203KB, beacon off, tasks 16, water 8.1C, source auto
+2026-10-25 00:58:58 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:58:59 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (185115) sentry: W710 measuring is not running
+I (185115) sentry: [V] 'distance' done in 0 ms
+2026-10-25 00:58:59 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:59:00 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (186625) sentry: W605 schedule is not running
+I (186625) sentry: [V] 'relay' done in 0 ms
+2026-10-25 00:59:01 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:59:02 DEBUG    [drivers.sentry_uart] RX block
+relay off
+I (188145) sentry: [VALVE] CLOSED (command)
+I (188145) sentry: [V] valve driver GPIO8=0, cycles 142
+I (188145) sentry: [V] 'relay' done in 11 ms
+2026-10-25 00:59:02 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:59:03 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (189645) sentry: W510 lamp already off
+I (189645) sentry: [V] 'lamp' done in 0 ms
+2026-10-25 00:59:04 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:59:05 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (191155) sentry: [STATE] 3 VERBOSE -> 1 NORMAL (by command)
+I (191665) sentry: [NAV] depth 41.5 m, heading 279, speed 2.6 kn
+2026-10-25 00:59:05 INFO     [conftest] === END tests/test_v230.py::test_alert_create_acknowledge_and_clear[critical] ===
+2026-10-25 00:59:05 INFO     [conftest] === START tests/test_v230.py::test_invalid_alert_level ===
+2026-10-25 00:59:06 INFO     [drivers.sentry_uart] TX whoami
+2026-10-25 00:59:07 DEBUG    [drivers.sentry_uart] RX block
+whoami
+I (193085) sentry: user: test_user, access: user
+I (193665) sentry: [TELEMETRY #6] 00:59:06 up 00:03:13 heap 251KB rssi -26 temp 32.7C depth 41.5m hull 5.2bar batt 24.2V valve closed sonar - watch disarmed alerts 0 state NORMAL
+2026-10-25 00:59:08 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:59:09 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (195095) sentry: W303 already in 1 NORMAL
+2026-10-25 00:59:09 INFO     [drivers.sentry_uart] TX alert test invalid
+2026-10-25 00:59:10 DEBUG    [drivers.sentry_uart] RX block
+alert test invalid
+E (196605) sentry: E854 usage: alert test info|warning|critical
+2026-10-25 00:59:11 INFO     [drivers.sentry_uart] TX distance stop
+2026-10-25 00:59:12 DEBUG    [drivers.sentry_uart] RX block
+distance stop
+W (198115) sentry: W710 measuring is not running
+2026-10-25 00:59:12 INFO     [drivers.sentry_uart] TX relay schedule off
+2026-10-25 00:59:13 DEBUG    [drivers.sentry_uart] RX block
+relay schedule off
+W (199625) sentry: W605 schedule is not running
+2026-10-25 00:59:14 INFO     [drivers.sentry_uart] TX relay off
+2026-10-25 00:59:15 DEBUG    [drivers.sentry_uart] RX block
+relay off
+W (201135) sentry: W601 relay already off
+2026-10-25 00:59:15 INFO     [drivers.sentry_uart] TX lamp off
+2026-10-25 00:59:16 DEBUG    [drivers.sentry_uart] RX block
+lamp off
+W (202645) sentry: W510 lamp already off
+2026-10-25 00:59:17 INFO     [drivers.sentry_uart] TX state 1
+2026-10-25 00:59:18 DEBUG    [drivers.sentry_uart] RX block
+state 1
+W (204155) sentry: W303 already in 1 NORMAL
+2026-10-25 00:59:18 INFO     [conftest] === END tests/test_v230.py::test_invalid_alert_level ===

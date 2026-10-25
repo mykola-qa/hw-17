@@ -64,6 +64,40 @@ DUT (Device Under Test): ESP32-S3, `/dev/ttyACM0`, account `test_user`.
 | DS-5 stats and history | pass | 662 measurements, 1 error, min 3.8 cm, max 138.3 cm, avg 43.2 cm; filter off, alarm on; history lists 10 entries |
 | HL-3 health commands | pass | auto on at 30 s; `health now` prints a report; `health off` and `health on` are accepted |
 | System status | pass | `status` shows v2.1.0 on ota_0, NORMAL, `lol_slow`, `test_user`, valve closed; `sysinfo`, `temp`, and `uptime` respond |
+| OTA-1 boot banner | pass | reboot countdown 3-2-1; `fw v2.1.0`; `running v2.1.0 from ota_0`; `ready. state 1 NORMAL`; `last reset: software reboot` |
+| WF-3 no auto-connect | pass | boot prints `known network 'lol_slow'. Type 'reconnect'` and does not connect |
+| AU-1 profile after reboot | pass | boot prints `profile 'test_user' registered` |
+| AC-1 E002 without Wi-Fi | pass | after reboot, `login`, `lamp status`, `relay status`, and `lamp scene load 3` return E002 |
+| LM-1 off after reboot | pass | after login, beacon is off while color blue, 37%, and breathe remain |
+| LM-7 settings after reboot | pass | scene 3 loads `(0,0,255)` 37% breathe |
+| RL-2 persistence | pass | relay stays closed, auto on, cycles 124 |
+| OTA-6 / OTA-7 beta update | pass | 2.1.0 on ota_0 downloads v2.3.0 to ota_1 in 3 s; self-check passes; running v2.3.0 from ota_1 |
+| OTA-10 after 2.3.0 boot | pass | beacon off with blue, 37%, breathe saved; `lamp on` shows that pattern and the LED is blue; relay closed, auto on, cycles 124; health 30 s; calibration +0.0 cm, filter off, alarm on |
+| LM-5 timer on 2.3.0 | pass | `auto-off in 10 s`; lamp off about 10 s later. BUG-001 does not reproduce |
+| DS-7 on 2.3.0 | fail BUG-002 | continuous readings stay near 50 cm and then return many E701 no-echo lines. Not a new regression |
+| GD-1 guard status | partial | disarmed, zone 50 cm, last distance -1.0 cm |
+| GD-1 arm and disarm | pass | countdown reaches ARMED after 10 s; PIN 1234 disarms from ARMED |
+| GD-2 intrusion | pass | hand at 11.5 cm raises INTRUSION and a 15 s disarm warning; PIN 1234 disarms from INTRUSION. The relay click was `[VALVE] OPEN (distance alarm)` because relay auto was still on |
+| GD-3 alarm | pass | after 15 s without a PIN, GENERAL ALARM opens the valve as a critical alert and raises NORMAL to VERBOSE; PIN 1234 disarms the alarm and closes the valve. After disarm the LED blinks green and blue; the red/blue alarm color was not observed |
+| AL-2 alert list | pass | 18 alerts, all unacknowledged; #18 is CRITICAL `GENERAL ALARM` |
+| AL-3 / AL-4 acknowledge and clear | pass | `alert ack 18` acknowledges the critical alert; `alert ack all` acknowledges the other 17; `alert clear` leaves no alerts |
+| OTA-3 / OTA-4 on 2.3.0 | pass | `ota check` reports running newer than stable; `ota update beta` prints `already up to date` and does not reboot |
+| OTA-1 / OTA-2 on 2.3.0 | pass | `version` shows v2.3.0, partition ota_1 at 0x1a0000, valid; `ota status` shows previous v2.1.0 in ota_0 |
+| OTA-5 blocked downgrade | pass | `ota install 2.1.0` returns E408 and does not reboot |
+| OTA-5 forced downgrade | pass | `ota install 2.1.0 force` installs 2.1.0 on ota_0 in 9 s; self-check passes |
+| OTA-10 after downgrade | pass | login works; beacon off, blue, 37%, breathe; relay closed, auto off, cycles 130; health 30 s; calibration +0.0 cm, filter off, alarm off |
+| OTA-8 broken rollback | pass | v2.9.0-broken fails self-check and rolls back to v2.1.0 on ota_0; `version` is valid; `ota rollback` returns E417 |
+| OTA-9 bad images | pass | garbage returns E406; truncated and corrupted return E412; `version` stays v2.1.0 valid |
+| OTA-11 E418 | pass | `ota url ftp://...` returns `E418 url must start with http:// or https://` |
+| OTA-9 drop | partial | server drops at 49%; device returns E410 after 40% and does not reboot |
+| OTA-9 recovery after drop | pass | the following `ota update beta` installs v2.3.0 in 47 s under `--slow 20` and passes self-check. `disconnect` was not sent |
+| OTA-12 server default | pass | server returns to the GitHub fw7 URL; `ota check` shows current 2.3.0, stable 2.1.0, beta 2.3.0, running newer than stable |
+| GD-4 wrong PIN | pass | attempts 1/3 and 2/3 return E803; the third raises GENERAL ALARM, opens the relay, and moves NORMAL to VERBOSE. PIN 1234 disarms it and the relay clicks closed |
+| K4 on 2.3.0 | pass | a short press acknowledges alert #3; a 1.5 s hold raises PANIC, opens the relay, and PIN 1234 closes it |
+| GD-5 PIN change | pass | `guard pin 1234 5678` and `guard pin 5678 1234` both print `PIN changed`. The PIN is back to 1234. `guard log` keeps the last 10 events. Logout prints `stays ARMED after logout`, and `guard status` is still ARMED after the next login |
+| WF-3 disconnect | pass | `disconnect` drops the link; `reconnect` joins `lol_slow` and gets 192.168.50.188 again |
+| DS-3 calibrate | fail BUG-003 | `distance calibrate 20` sets offset +0.2 cm from a 19.8 cm measurement. `distance calibrate reset` returns E706, and stats still show calibration +0.2 cm |
+| DS-6 no echo on 2.3.0 | pass | after several real echoes, one `distance` returns `E701 sonar: no echo` |
 | DS-1 single distance | pass | single readings followed the hand, including 9.1 cm, 29.5 cm, and 138.3 cm |
 | K3 press and second press | pass | 30 s pinging starts and then stops |
 | K4 on 2.1.0 | pass | `E099 K4: perimeter watch is planned in v2.3.0` |

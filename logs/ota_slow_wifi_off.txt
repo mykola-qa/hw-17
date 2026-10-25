@@ -1,0 +1,10 @@
+ota update beta
+server mode: --slow 20
+[OTA] beta channel: v2.3.0, current: v2.1.0
+[OTA] 10% through 100%
+[OTA] success: v2.1.0 -> v2.3.0 in 47 s. Rebooting...
+fw v2.3.0
+[OTA] running v2.3.0 from ota_1
+[OTA] self-check passed, firmware marked VALID
+ready. state 1 NORMAL
+disconnect was not sent, so Wi-Fi stayed up and E411 was not observed

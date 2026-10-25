@@ -1,0 +1,3 @@
+ota url http://192.168.50.211:8000/test/garbage.bin
+[OTA] downloading http://192.168.50.211:8000/test/garbage.bin
+E406 invalid image header - not a firmware file

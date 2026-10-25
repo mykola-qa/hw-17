@@ -1,0 +1,11 @@
+ota update beta
+server mode: drop connection at 50%
+server log: dropping connection at 49% (--drop-at)
+[OTA] beta channel: v2.3.0, current: v2.1.0
+[OTA] downloading http://192.168.50.211:8000/fw7/v2.3.0/sentry_fw7.bin
+[OTA] 10%
+[OTA] 20%
+[OTA] 30%
+[OTA] 40%
+E410 download interrupted (ESP_FAIL)
+no reboot

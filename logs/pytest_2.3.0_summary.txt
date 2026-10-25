@@ -1,0 +1,175 @@
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.13.5, pytest-8.4.2, pluggy-1.7.0 -- /home/noim/hw_17/qa/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/noim/hw_17/qa
+configfile: pytest.ini
+testpaths: tests
+[1mcollecting ... [0mcollected 75 items / 10 deselected / 65 selected
+
+tests/test_common.py::test_state_accepts_documented_values[1] [32mPASSED[0m[32m     [  1%][0m
+tests/test_common.py::test_state_accepts_documented_values[2] [32mPASSED[0m[32m     [  3%][0m
+tests/test_common.py::test_state_accepts_documented_values[3] [32mPASSED[0m[32m     [  4%][0m
+tests/test_common.py::test_state_accepts_documented_values[NORMAL] [32mPASSED[0m[32m [  6%][0m
+tests/test_common.py::test_state_accepts_documented_values[DEBUG] [32mPASSED[0m[32m [  7%][0m
+tests/test_common.py::test_state_accepts_documented_values[VERBOSE] [32mPASSED[0m[32m [  9%][0m
+tests/test_common.py::test_state_rejects_invalid_value [32mPASSED[0m[32m            [ 10%][0m
+tests/test_common.py::test_lamp_brightness_boundaries[-1-E504] [32mPASSED[0m[32m    [ 12%][0m
+tests/test_common.py::test_lamp_brightness_boundaries[0-None] [32mPASSED[0m[32m     [ 13%][0m
+tests/test_common.py::test_lamp_brightness_boundaries[100-None] [32mPASSED[0m[32m   [ 15%][0m
+tests/test_common.py::test_lamp_brightness_boundaries[101-E504] [32mPASSED[0m[32m   [ 16%][0m
+tests/test_common.py::test_lamp_rgb_boundaries[-1 0 0-E502] [32mPASSED[0m[32m       [ 18%][0m
+tests/test_common.py::test_lamp_rgb_boundaries[0 0 0-None] [32mPASSED[0m[32m        [ 20%][0m
+tests/test_common.py::test_lamp_rgb_boundaries[255 255 255-None] [32mPASSED[0m[32m  [ 21%][0m
+tests/test_common.py::test_lamp_rgb_boundaries[256 0 0-E502] [32mPASSED[0m[32m      [ 23%][0m
+tests/test_common.py::test_lamp_modes_and_invalid_mode [32mPASSED[0m[32m            [ 24%][0m
+tests/test_common.py::test_lamp_timer_boundaries[-1-E506] [32mPASSED[0m[32m         [ 26%][0m
+tests/test_common.py::test_lamp_timer_boundaries[1-None] [32mPASSED[0m[32m          [ 27%][0m
+tests/test_common.py::test_lamp_timer_boundaries[3600-None] [32mPASSED[0m[32m       [ 29%][0m
+tests/test_common.py::test_lamp_timer_boundaries[3601-E506] [32mPASSED[0m[32m       [ 30%][0m
+tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99] [31mFAILED[0m[31m [ 32%][0m
+tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[10001] [32mPASSED[0m[31m [ 33%][0m
+tests/test_common.py::test_relay_schedule_boundaries[1-2-False] [32mPASSED[0m[31m   [ 35%][0m
+tests/test_common.py::test_relay_schedule_boundaries[2-2-True] [32mPASSED[0m[31m    [ 36%][0m
+tests/test_common.py::test_relay_schedule_boundaries[3600-3600-True] [32mPASSED[0m[31m [ 38%][0m
+tests/test_common.py::test_relay_schedule_boundaries[3601-2-False] [32mPASSED[0m[31m [ 40%][0m
+tests/test_common.py::test_distance_count_boundaries[0-E704] [32mPASSED[0m[31m      [ 41%][0m
+tests/test_common.py::test_distance_count_boundaries[1-None] [32mPASSED[0m[31m      [ 43%][0m
+tests/test_common.py::test_distance_count_boundaries[20-None] [31mFAILED[0m[31m     [ 44%][0m
+tests/test_common.py::test_distance_count_boundaries[21-E704] [32mPASSED[0m[31m     [ 46%][0m
+tests/test_common.py::test_distance_log_interval_boundaries[99-E705] [32mPASSED[0m[31m [ 47%][0m
+tests/test_common.py::test_distance_log_interval_boundaries[100-None] [32mPASSED[0m[31m [ 49%][0m
+tests/test_common.py::test_distance_log_interval_boundaries[5000-None] [32mPASSED[0m[31m [ 50%][0m
+tests/test_common.py::test_distance_log_interval_boundaries[5001-E705] [32mPASSED[0m[31m [ 52%][0m
+tests/test_common.py::test_distance_alarm_boundaries[4-E708] [32mPASSED[0m[31m      [ 53%][0m
+tests/test_common.py::test_distance_alarm_boundaries[5-None] [32mPASSED[0m[31m      [ 55%][0m
+tests/test_common.py::test_distance_alarm_boundaries[300-None] [32mPASSED[0m[31m    [ 56%][0m
+tests/test_common.py::test_distance_alarm_boundaries[301-E708] [32mPASSED[0m[31m    [ 58%][0m
+tests/test_common.py::test_health_interval_boundaries[9-E902] [32mPASSED[0m[31m     [ 60%][0m
+tests/test_common.py::test_health_interval_boundaries[10-None] [32mPASSED[0m[31m    [ 61%][0m
+tests/test_common.py::test_health_interval_boundaries[300-None] [32mPASSED[0m[31m   [ 63%][0m
+tests/test_common.py::test_health_interval_boundaries[301-E902] [32mPASSED[0m[31m   [ 64%][0m
+tests/test_common.py::test_network_status_commands [32mPASSED[0m[31m                [ 66%][0m
+tests/test_common.py::test_reboot_returns_to_normal_and_keeps_account [32mPASSED[0m[31m [ 67%][0m
+tests/test_smoke.py::test_version_matches_configuration [32mPASSED[0m[31m           [ 69%][0m
+tests/test_smoke.py::test_help_exposes_required_command_groups [32mPASSED[0m[31m    [ 70%][0m
+tests/test_smoke.py::test_status_reports_core_state [32mPASSED[0m[31m               [ 72%][0m
+tests/test_smoke.py::test_unknown_command_has_documented_error [32mPASSED[0m[31m    [ 73%][0m
+tests/test_smoke.py::test_login_access_gate_and_recovery [32mPASSED[0m[31m          [ 75%][0m
+tests/test_v210.py::test_future_features_report_planned[guard status] [33mSKIPPED[0m[31m [ 76%][0m
+tests/test_v210.py::test_future_features_report_planned[guard arm] [33mSKIPPED[0m[31m [ 78%][0m
+tests/test_v210.py::test_future_features_report_planned[alert list] [33mSKIPPED[0m[31m [ 80%][0m
+tests/test_v210.py::test_future_features_report_planned[alert test info] [33mSKIPPED[0m[31m [ 81%][0m
+tests/test_v230.py::test_guard_zone_boundaries[9-E808] [32mPASSED[0m[31m            [ 83%][0m
+tests/test_v230.py::test_guard_zone_boundaries[10-None] [32mPASSED[0m[31m           [ 84%][0m
+tests/test_v230.py::test_guard_zone_boundaries[200-None] [32mPASSED[0m[31m          [ 86%][0m
+tests/test_v230.py::test_guard_zone_boundaries[201-E808] [32mPASSED[0m[31m          [ 87%][0m
+tests/test_v230.py::test_guard_pin_format_validation[123] [32mPASSED[0m[31m         [ 89%][0m
+tests/test_v230.py::test_guard_pin_format_validation[12345] [32mPASSED[0m[31m       [ 90%][0m
+tests/test_v230.py::test_guard_pin_format_validation[abcd] [32mPASSED[0m[31m        [ 92%][0m
+tests/test_v230.py::test_guard_status_is_available [32mPASSED[0m[31m                [ 93%][0m
+tests/test_v230.py::test_alert_create_acknowledge_and_clear[info] [32mPASSED[0m[31m [ 95%][0m
+tests/test_v230.py::test_alert_create_acknowledge_and_clear[warning] [32mPASSED[0m[31m [ 96%][0m
+tests/test_v230.py::test_alert_create_acknowledge_and_clear[critical] [32mPASSED[0m[31m [ 98%][0m
+tests/test_v230.py::test_invalid_alert_level [32mPASSED[0m[31m                      [100%][0m
+
+=================================== FAILURES ===================================
+[31m[1m_______________ test_relay_pulse_rejects_outside_boundaries[99] ________________[0m
+[1m[31mtests/test_common.py[0m:78: in test_relay_pulse_rejects_outside_boundaries
+    [0massert_error(logged_in_dut.command([33mf[39;49;00m[33m"[39;49;00m[33mrelay pulse [39;49;00m[33m{[39;49;00mmilliseconds[33m}[39;49;00m[33m"[39;49;00m), [33m"[39;49;00m[33mE603[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+[1m[31mtests/helpers.py[0m:14: in assert_error
+    [0m[94massert[39;49;00m re.search([33mrf[39;49;00m[33m"[39;49;00m[33m\[39;49;00m[33mb[39;49;00m[33m{[39;49;00mre.escape(code)[33m}[39;49;00m[33m\[39;49;00m[33mb[39;49;00m[33m"[39;49;00m, output), ([90m[39;49;00m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE   AssertionError: expected E603; output was:[0m
+[1m[31mE   relay pulse 99[0m
+[1m[31mE   I (2268695) sentry: [VALVE] OPEN (pulse)[0m
+[1m[31mE   I (2268805) sentry: [VALVE] CLOSED (pulse end)[0m
+------------------------------ Captured log setup ------------------------------
+2026-10-25 01:33:38 [32mINFO    [0m [conftest] === START tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99] ===
+2026-10-25 01:33:38 [32mINFO    [0m [drivers.sentry_uart] TX whoami
+2026-10-25 01:33:39 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+whoami
+I (2265675) sentry: user: test_user, access: user
+2026-10-25 01:33:40 [32mINFO    [0m [drivers.sentry_uart] TX state 1
+2026-10-25 01:33:41 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+state 1
+W (2267185) sentry: W303 already in 1 NORMAL
+------------------------------ Captured log call -------------------------------
+2026-10-25 01:33:41 [32mINFO    [0m [drivers.sentry_uart] TX relay pulse 99
+2026-10-25 01:33:42 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+relay pulse 99
+I (2268695) sentry: [VALVE] OPEN (pulse)
+I (2268805) sentry: [VALVE] CLOSED (pulse end)
+---------------------------- Captured log teardown -----------------------------
+2026-10-25 01:33:43 [32mINFO    [0m [drivers.sentry_uart] TX distance stop
+2026-10-25 01:33:44 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+distance stop
+W (2270235) sentry: W710 measuring is not running
+2026-10-25 01:33:44 [32mINFO    [0m [drivers.sentry_uart] TX relay schedule off
+2026-10-25 01:33:46 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+relay schedule off
+W (2271745) sentry: W605 schedule is not running
+2026-10-25 01:33:46 [32mINFO    [0m [drivers.sentry_uart] TX relay off
+2026-10-25 01:33:47 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+relay off
+W (2273255) sentry: W601 relay already off
+2026-10-25 01:33:47 [32mINFO    [0m [drivers.sentry_uart] TX lamp off
+2026-10-25 01:33:49 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+lamp off
+W (2274765) sentry: W510 lamp already off
+2026-10-25 01:33:49 [32mINFO    [0m [drivers.sentry_uart] TX state 1
+2026-10-25 01:33:50 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+state 1
+W (2276275) sentry: W303 already in 1 NORMAL
+2026-10-25 01:33:50 [32mINFO    [0m [conftest] === END tests/test_common.py::test_relay_pulse_rejects_outside_boundaries[99] ===
+[31m[1m___________________ test_distance_count_boundaries[20-None] ____________________[0m
+[1m[31mtests/test_common.py[0m:107: in test_distance_count_boundaries
+    [0massert_not_error(output, [33m"[39;49;00m[33mE704[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+[1m[31mtests/helpers.py[0m:20: in assert_not_error
+    [0m[94massert[39;49;00m [95mnot[39;49;00m re.search([33mrf[39;49;00m[33m"[39;49;00m[33m\[39;49;00m[33mb[39;49;00m[33m{[39;49;00mre.escape(code)[33m}[39;49;00m[33m\[39;49;00m[33mb[39;49;00m[33m"[39;49;00m, output), ([90m[39;49;00m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE   AssertionError: did not expect E704; output was:[0m
+[1m[31mE   distance 20[0m
+[1m[31mE   E (2368635) sentry: E704 count must be 1-20[0m
+------------------------------ Captured log setup ------------------------------
+2026-10-25 01:35:18 [32mINFO    [0m [conftest] === START tests/test_common.py::test_distance_count_boundaries[20-None] ===
+2026-10-25 01:35:18 [32mINFO    [0m [drivers.sentry_uart] TX whoami
+2026-10-25 01:35:19 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+whoami
+I (2365615) sentry: user: test_user, access: user
+2026-10-25 01:35:20 [32mINFO    [0m [drivers.sentry_uart] TX state 1
+2026-10-25 01:35:21 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+state 1
+W (2367125) sentry: W303 already in 1 NORMAL
+------------------------------ Captured log call -------------------------------
+2026-10-25 01:35:21 [32mINFO    [0m [drivers.sentry_uart] TX distance 20
+2026-10-25 01:35:22 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+distance 20
+E (2368635) sentry: E704 count must be 1-20
+---------------------------- Captured log teardown -----------------------------
+2026-10-25 01:35:23 [32mINFO    [0m [drivers.sentry_uart] TX distance stop
+2026-10-25 01:35:24 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+distance stop
+W (2370155) sentry: W710 measuring is not running
+2026-10-25 01:35:24 [32mINFO    [0m [drivers.sentry_uart] TX relay schedule off
+2026-10-25 01:35:25 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+relay schedule off
+W (2371665) sentry: W605 schedule is not running
+2026-10-25 01:35:26 [32mINFO    [0m [drivers.sentry_uart] TX relay off
+2026-10-25 01:35:27 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+relay off
+W (2373175) sentry: W601 relay already off
+2026-10-25 01:35:27 [32mINFO    [0m [drivers.sentry_uart] TX lamp off
+2026-10-25 01:35:28 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+lamp off
+I (2374675) sentry: [PWR] battery bus 24.11 V, load 1.7 A
+W (2374685) sentry: W510 lamp already off
+2026-10-25 01:35:29 [32mINFO    [0m [drivers.sentry_uart] TX state 1
+2026-10-25 01:35:30 [35mDEBUG   [0m [drivers.sentry_uart] RX block
+state 1
+W (2376095) sentry: W303 already in 1 NORMAL
+2026-10-25 01:35:30 [32mINFO    [0m [conftest] === END tests/test_common.py::test_distance_count_boundaries[20-None] ===
+[36m[1m=========================== short test summary info ============================[0m
+[33mSKIPPED[0m [4] tests/test_v210.py:11: requires firmware 2.1.0
+[31mFAILED[0m tests/test_common.py::[1mtest_relay_pulse_rejects_outside_boundaries[99][0m - AssertionError: expected E603; output was:
+[31mFAILED[0m tests/test_common.py::[1mtest_distance_count_boundaries[20-None][0m - AssertionError: did not expect E704; output was:
+[31m====== [31m[1m2 failed[0m, [32m59 passed[0m, [33m4 skipped[0m, [33m10 deselected[0m[31m in 795.54s (0:13:15)[0m[31m ======[0m

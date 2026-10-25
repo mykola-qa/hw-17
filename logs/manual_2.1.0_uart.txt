@@ -270,3 +270,195 @@ temp
 chip temperature: 31.7 C
 uptime
 uptime: 0h 34m 01s
+lamp on
+[BEACON] on (command) solid, 80%, color (0,255,255)
+lamp color blue
+[BEACON] color: blue (0,0,255)
+lamp brightness 37
+[BEACON] brightness: 37%
+lamp mode breathe
+[BEACON] mode: breathe
+lamp scene save 3
+[BEACON] scene 3 saved
+relay status
+[VALVE] closed, auto on, cycles 124
+reboot
+rebooting in 3...
+last reset: software reboot
+[LINK] known network 'lol_slow'. Type 'reconnect' to connect
+[AUTH] profile 'test_user' registered
+[OTA] running v2.1.0 from ota_0
+ready. state 1 NORMAL (patrol). Type 'help'
+login test_user ***
+E002 Wi-Fi required. Use 'reconnect' or 'connect'
+lamp status
+E002 Wi-Fi required
+relay status
+E002 Wi-Fi required
+lamp scene load 3
+E002 Wi-Fi required
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -33 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+[LINK] time: synced via NTP, 23:53:18
+login test_user ***
+E201 usage: login <login> <password>
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+lamp status
+[BEACON] off, color (0,0,255), brightness 37%, mode breathe, timer off
+relay status
+[VALVE] closed, auto on, cycles 124
+lamp scene load 3
+[BEACON] scene 3 loaded: (0,0,255) 37% breathe
+ota server http://192.168.50.211:8000/fw7/
+[OTA] server: http://192.168.50.211:8000/fw7/ (custom)
+ota check
+[OTA] current: v2.1.0
+[OTA] stable:  v2.1.0
+[OTA] beta:    v2.3.0
+[OTA] up to date (stable)
+
+# 2026-10-25 after reflash to v2.1.0, logged in
+lamp color notacolor
+E (826183) sentry: E503 unknown color 'notacolor'. Colors: white red green blue yellow purple cyan orange, or 'color R G B'
+LAMP status
+I (877063) sentry: [BEACON] off, color (255,255,255), brightness 100%, mode rainbow, timer off
+привіт
+W (888963) sentry: W006 non-latin characters ignored (use English layout)
+test
+E (893763) sentry: E001 unknown command 'test'. Type 'help'
+watch status
+E (944923) sentry: E099 perimeter watch (guard) is planned in v2.3.0
+cic list
+E (949163) sentry: E099 CIC alert center is planned in v2.3.0
+register test_user abcdefgh
+E (996303) sentry: E202 profile 'test_user' already exists (one per device)
+register ab abcdefgh
+E (1002143) sentry: E202 profile 'test_user' already exists (one per device)
+register okuser 12345
+E (1006563) sentry: E202 profile 'test_user' already exists (one per device)
+register debug abcdefgh
+E (1009983) sentry: E202 profile 'test_user' already exists (one per device)
+sudo abcdefgh
+E (1050133) sentry: E213 sudo: wrong password
+login debug abcdefgh
+E (1056533) sentry: E206 already logged in as 'test_user'. Use 'logout' first
+logout
+I (1085103) sentry: [AUTH] operator test_user relieved from watch
+login debug abcdefgh
+E (1089773) sentry: E209 wrong login or password
+login test_user ***
+E (1093393) sentry: E209 wrong login or password. Attempts: 1/3
+login test_user ***
+I (1140283) sentry: [AUTH] operator test_user on watch, console 2
+I (1140453) sentry: [TELEMETRY] auto report every 30 s ('health off' to stop)
+# after BUG-007 reboot, Wi-Fi was down
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -26 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+[LINK] time: synced via NTP, 02:26:37
+login test_user ***
+E (83550) sentry: E209 wrong login or password. Attempts: 1/3
+login test_user ***
+I (113740) sentry: [AUTH] operator test_user on watch, console 2
+I (113910) sentry: [TELEMETRY] auto report every 30 s ('health off' to stop)
+scan
+[LINK] scanning...
+  [ 1] lol_slow                          -27 dBm  ch 11  secured
+  [ 2] Tp-link_8E78                      -64 dBm  ch  9  secured
+  [ 3] Galaxy A30s31F7                   -75 dBm  ch 11  secured
+  [ 4] Storm                             -80 dBm  ch 10  secured
+  [ 5] Lytvyn                            -84 dBm  ch 11  secured
+  [ 6] Zhuk                              -84 dBm  ch 13  secured
+  [ 7] Oleg                              -86 dBm  ch  2  secured
+  [ 8] TP-Link_Guest_5674                -92 dBm  ch  8  secured
+  [ 9] TP-Link_5674                      -93 dBm  ch  8  secured
+ping 1.1.1.1
+ping 1.1.1.1 (1.1.1.1)...
+  reply: time 6 ms
+  reply: time 4 ms
+  reply: time 5 ms
+  reply: time 3 ms
+ping: 4/4 ok, avg 4 ms
+distance calibrate 20
+[SONAR] calibrating: put object at 20.0 cm...
+[SONAR] calibrated: measured 16.9 cm, offset +3.1 cm
+distance stats
+[SONAR] no measurements yet. Timeouts: 0
+distance calibrate reset
+E (232380) sentry: E706 usage: distance calibrate <ref 5-300 cm>
+distance stats
+[SONAR] no measurements yet. Timeouts: 0
+distance
+[SONAR] ping: echo 18.7 cm
+[COLLISION] contact too close: 18.7 cm (< 20 cm)
+distance stats
+[SONAR] measurements 1, errors 0, min 18.7, max 18.7, avg 18.7 cm
+[SONAR] calibration +3.1 cm, filter median 5, alarm off
+logout
+[AUTH] operator test_user relieved from watch
+login test_user abcdefgh
+E209 wrong login or password. Attempts: 1/3
+login test_user abcdefgh
+E209 wrong login or password. Attempts: 2/3
+login test_user abcdefgh
+E209 wrong login or password. Attempts: 3/3
+E210 too many attempts, account locked for 30 s
+login test_user ***
+E (337410) sentry: E207 account locked. Try again in 15 s
+login test_user ***
+I (357550) sentry: [AUTH] operator test_user on watch, console 2
+I (357710) sentry: [TELEMETRY] auto report every 30 s ('health off' to stop)
+passwd *** ***
+E (396570) sentry: E205 password must be 6-32 chars
+passwd *** ***
+I (416990) sentry: [AUTH] password changed
+logout
+[AUTH] operator test_user relieved from watch
+login test_user ***
+E (441790) sentry: E209 wrong login or password. Attempts: 1/3
+login test_user ***
+I (445690) sentry: [AUTH] operator test_user on watch, console 2
+passwd *** ***
+I (470530) sentry: [AUTH] password changed
+connect
+[LINK] scanning...
+SSID or number:
+E (506260) sentry: E111 SSID cannot be empty
+connect
+SSID or number: 1
+Password: ***
+E (544140) sentry: E112 password too short (min 8 chars)
+connect
+SSID or number: nosuchnetwork
+Password: ***
+[LINK] raising buoy antenna, connecting to 'nosuchnetwork'...
+[LINK] retry 1/3...
+[LINK] retry 2/3...
+[LINK] retry 3/3...
+E (592030) sentry: E102 network 'nosuchnetwork' not found
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -24 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+[TELEMETRY] auto report every 30 s ('health off' to stop)
+whoami
+user: test_user, access: user
+connect
+SSID or number: 1
+Password: ***
+[LINK] raising buoy antenna, connecting to 'lol_slow'...
+E (719940) sentry: E101 wrong password for 'lol_slow'
+reconnect
+[LINK] got ip 192.168.50.188
+[LINK] connected to 'lol_slow', rssi -25 dBm (excellent)
+[LINK] fleet network reachable (internet OK)
+[TELEMETRY] auto report every 30 s ('health off' to stop)
+lamp off
+W (774040) sentry: W510 lamp already off
+lamp status
+[BEACON] off, color (255,255,255), brightness 100%, mode rainbow, timer off
+# operator: LED is green while the beacon is off, state NORMAL

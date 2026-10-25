@@ -1,0 +1,7 @@
+ota url http://192.168.50.211:8000/test/corrupted.bin
+[OTA] image: sentry_fw7 v2.3.0
+[OTA] 10% through 100%
+Image hash failed - image is corrupt
+E412 image validation failed (corrupted image)
+version
+fw v2.1.0, partition ota_0 @ 0x20000, state: valid

@@ -1,0 +1,34 @@
+ota install 2.1.0 force
+[OTA] current v2.3.0 (ota_1) -> target partition ota_0
+[OTA] downloading http://192.168.50.211:8000/fw7/v2.1.0/sentry_fw7.bin
+[OTA] image: sentry_fw7 v2.1.0 (build Oct  6 2026 02:14:57)
+[OTA] 10% through 100%
+[OTA] success: v2.3.0 -> v2.1.0 in 9 s. Rebooting...
+fw v2.1.0
+Loaded app from partition at offset 0x20000
+[OTA] running v2.1.0 from ota_0
+[OTA] custom update server: http://192.168.50.211:8000/fw7/
+[OTA] new firmware, PENDING_VERIFY - self-check...
+[OTA] self-check passed, firmware marked VALID
+ready. state 1 NORMAL
+[LINK] known network 'lol_slow'. Type 'reconnect' to connect
+[AUTH] profile 'test_user' registered
+reconnect
+[LINK] got ip 192.168.50.188
+login test_user ***
+E201 usage: login <login> <password>
+login test_user ***
+[AUTH] operator test_user on watch, console 2
+lamp status
+[BEACON] off, color (0,0,255), brightness 37%, mode breathe, timer off
+relay status
+[VALVE] closed, auto off, cycles 130
+health
+[TELEMETRY] auto on, interval 30 s (now 30 s in NORMAL)
+distance stats
+[SONAR] no measurements yet. Timeouts: 0
+distance
+[SONAR] ping: echo 130.1 cm
+distance stats
+[SONAR] measurements 1, errors 0, min 130.1, max 130.1, avg 130.1 cm
+[SONAR] calibration +0.0 cm, filter off, alarm off

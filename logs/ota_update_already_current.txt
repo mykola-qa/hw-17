@@ -1,0 +1,22 @@
+ota check
+[OTA] current: v2.3.0
+[OTA] stable:  v2.1.0
+[OTA] beta:    v2.3.0
+[OTA] running newer than stable
+ota update beta
+[OTA] beta channel: v2.3.0, current: v2.3.0
+[OTA] already up to date
+
+# 2026-10-25, fw v2.1.0, logged in, stable channel is also v2.1.0
+ota update
+[OTA] stable channel: v2.1.0, current: v2.1.0
+[OTA] current v2.1.0 (ota_0) -> target partition ota_1
+[OTA] downloading https://raw.githubusercontent.com/BohdanHorbanych/esp32-ota-files/main/fw7/v2.1.0/sentry_fw7.bin
+[OTA] image: sentry_fw7 v2.1.0 (build Oct  6 2026 02:14:57)
+W409 same version v2.1.0 - reinstalling
+[OTA] 100%
+[OTA] success: v2.1.0 -> v2.1.0 in 6 s. Rebooting...
+[OTA] running v2.1.0 from ota_1
+[OTA] new firmware, PENDING_VERIFY - self-check...
+[OTA] self-check passed, firmware marked VALID
+ready. state 1 NORMAL (patrol). Type 'help'

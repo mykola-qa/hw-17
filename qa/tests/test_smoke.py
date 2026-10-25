@@ -20,7 +20,7 @@ def test_help_exposes_required_command_groups(dut: SentryUart) -> None:
 
 def test_status_reports_core_state(dut: SentryUart, expected_version: str) -> None:
     output = dut.command("status")
-    assert_has(output, expected_version, "NORMAL", "Wi-Fi")
+    assert_has(output, expected_version, "NORMAL", "link")
 
 
 def test_unknown_command_has_documented_error(dut: SentryUart) -> None:

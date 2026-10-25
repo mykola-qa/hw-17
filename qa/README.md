@@ -77,7 +77,11 @@ pytest tests/test_ota.py::test_update_beta --run-destructive
 
 After updating, change `SENTRY_VERSION` in `env/.env` before the next pytest
 process. Test logs are in `artifacts/logs/pytest.log`; compact machine-readable
-results are in `artifacts/results.json`.
+results are in `artifacts/results.json`. The verbose 2.3.0 run
+(`pytest -m "not ota" -v --tb=short`) is in
+[`../logs/pytest_2.3.0_summary.txt`](../logs/pytest_2.3.0_summary.txt).
+The 2.1.0 run (`pytest -m "not ota and not v230" -v --tb=short`) is in
+[`../logs/pytest_2.1.0_summary.txt`](../logs/pytest_2.1.0_summary.txt).
 
 Generate a starting report after each meaningful run:
 

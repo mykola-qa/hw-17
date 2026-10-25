@@ -1,0 +1,23 @@
+ota broken
+[OTA] installing intentionally broken build (rollback test)
+[OTA] current v2.1.0 (ota_0) -> target partition ota_1
+[OTA] downloading http://192.168.50.211:8000/fw7/broken/sentry_fw7.bin
+[OTA] image: sentry_fw7 v2.9.0-broken (build Oct  6 2026 02:15:55)
+[OTA] 10% through 100%
+[OTA] success: v2.1.0 -> v2.9.0-broken in 8 s. Rebooting...
+fw v2.9.0-broken
+[OTA] running v2.9.0-broken from ota_1
+[OTA] new firmware, PENDING_VERIFY - self-check...
+[OTA] self-check FAILED: core module init error. Rolling back...
+Rollback to previously worked partition.
+fw v2.1.0
+Loaded app from partition at offset 0x20000
+[OTA] running v2.1.0 from ota_0
+ready. state 1 NORMAL
+reconnect
+login test_user ***
+version
+fw v2.1.0 (build Oct  6 2026 02:14:57)
+partition: ota_0 @ 0x20000, state: valid
+ota rollback
+E417 previous firmware v2.9.0-broken is marked invalid
